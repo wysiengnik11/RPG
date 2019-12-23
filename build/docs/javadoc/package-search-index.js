@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"first_rpg_allslick"},{"l":"first_rpg_allslick.model"},{"l":"first_rpg.controller"},{"l":"first_rpg.model"},{"l":"first_rpg.view"},{"l":"rpg"},{"l":"rpg.model"},{"l":"tests_and_whatnot"}]
