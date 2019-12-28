@@ -1,4 +1,4 @@
-package first_rpg_allslick.model;
+package StateBasedGame_from_a_tutorial.model;
 
 /**
  * settings for the game

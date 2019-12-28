@@ -1,8 +1,8 @@
-package first_rpg_allslick;
+package StateBasedGame_from_a_tutorial;
 
 import java.io.File;
 
-import first_rpg_allslick.model.Settings;
+import StateBasedGame_from_a_tutorial.model.Settings;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;

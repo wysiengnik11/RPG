@@ -1,10 +1,10 @@
-package first_rpg_allslick;
+package StateBasedGame_from_a_tutorial;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-import static first_rpg_allslick.model.Settings.Window.*;
+import static StateBasedGame_from_a_tutorial.model.Settings.Window.*;
 
 /**
  * play game state

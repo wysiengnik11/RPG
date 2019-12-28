@@ -52,12 +52,12 @@ class Positionable {
 	}
 
 	public void setPosition(float x, float y) {
-		this.position = new Vector2f(x,y);
+		this.position.set(x,y);
 	}
 	public void setPosition(Vector2f position) {
 		this.position = position;
 	}
 	public Vector2f getPosition() {
-		return new Vector2f(position);
+		return position;
 	}
 }

@@ -1,6 +1,13 @@
 package rpg.model;
 
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Vector2f;
+
 import java.io.*;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.List;
 
 /**
  * Main game model class
@@ -11,7 +18,7 @@ import java.io.*;
  */
 public class RPG {
 
-	/** Map of the game */
+	/** Map of the current level */
 	private Level level;
 
 	/** Player character */
@@ -51,7 +58,19 @@ public class RPG {
 
 	/** Initialize the game */
 	public void init() {
+		try {
+			level.setMapImage(new Image("build/resources/main/States/Play/Levels/floor_0/map.png"));
+		} catch (SlickException e) {
+			e.printStackTrace();
+		}
+	}
 
+	/**
+	 * Function used by controller to get images to draw
+	 */
+	public void getImages(List<Image> images, List<Vector2f> vectors) {
+		images.add(level.getMapImage());
+		vectors.add(level.getPosition());
 	}
 
 	/**

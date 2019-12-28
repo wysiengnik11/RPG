@@ -6,6 +6,9 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+/**
+ * Play-time game state
+ */
 public class Play extends BasicGameState {
 	/** State's ID */
 	private int ID;

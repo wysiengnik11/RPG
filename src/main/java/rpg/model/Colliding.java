@@ -14,7 +14,7 @@ import java.io.ObjectInputStream;
  * @version 1.0
  * @since 2019-12-23
  */
-public class Colliding extends Positionable {
+class Colliding extends Positionable {
 	/** Bounding box shape used for detection */
 	private Shape boundingBox = null;
 	/**
