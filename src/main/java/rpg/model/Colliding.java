@@ -1,7 +1,6 @@
 package rpg.model;
 
 import org.newdawn.slick.geom.Shape;
-import org.newdawn.slick.geom.Transform;
 import org.newdawn.slick.geom.Vector2f;
 
 import java.io.FileInputStream;

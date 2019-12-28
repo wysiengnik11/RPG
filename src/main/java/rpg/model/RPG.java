@@ -10,16 +10,19 @@ import java.io.*;
  * @since 2019-12-23
  */
 public class RPG {
+
 	/** Map of the game */
-	Map map;
+	private Level level;
+
 	/** Player character */
-	Player player;
+	private Player player;
+
 	/** Game settings */
-	Settings settings;
+	private Settings settings;
 
 	/** Default constructor */
 	public RPG(){
-		map = new Map();
+		level = new Level();
 		player = new Player();
 		settings = new Settings();
 	}
@@ -28,10 +31,11 @@ public class RPG {
 	 * Constructor taking in path to saved settings file
 	 * If the file does not exist default settings are created
 	 * If the file fails to load TODO inform about import failure
+	 *
 	 * @param settingsPath Path to saved settings file
 	 */
 	public RPG(String settingsPath) {
-		map = new Map();
+		level = new Level();
 		player = new Player();
 		// Check if file exists
 		if(new File(settingsPath).exists()) {
@@ -44,6 +48,7 @@ public class RPG {
 			settings = new Settings();
 		}
 	}
+
 	/** Initialize the game */
 	public void init() {
 
@@ -51,6 +56,7 @@ public class RPG {
 
 	/**
 	 * Settings saving method
+	 *
 	 * @return Returns true if save was successful, false otherwise
 	 */
 	public boolean saveSettings() {
@@ -81,7 +87,30 @@ public class RPG {
 		}
 		return true;
 	}
-//
+
+	public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+
+	public Settings getSettings() {
+		return settings;
+	}
+
+	public void setSettings(Settings settings) {
+		this.settings = settings;
+	}
 //	public static void main(String[] args) {
 //		System.out.println("Main started");
 //		RPG game = new RPG();

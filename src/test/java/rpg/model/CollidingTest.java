@@ -127,6 +127,6 @@ public class CollidingTest {
 		assertEquals(colliding.getBoundingBox().getLocation().getY(), shape.getLocation().getY(), 0.0);
 
 		File f = new File("testsave.sav");
-		assertTrue(f.delete());
+		f.deleteOnExit();
 	}
 }
