@@ -21,22 +21,23 @@ class Map extends Colliding {
 	public Map(Image image) {
 		this(image, true);
 	}
-	public Map(Image image, boolean setCollision) {
+	public Map(Image image, boolean setRectangleCollision) {
 		super();
-		if(setCollision)
+		if(setRectangleCollision)
 			setBoundingBox(new Rectangle(0,0, image.getWidth(), image.getHeight()));
 		this.image = image;
 	}
-	public Map(Image image, int x, int y) {
+	public Map(Image image, float x, float y) {
 		this(image, true,x,y);
 	}
-	public Map(Image image, boolean setCollision, int x, int y) {
+	public Map(Image image, boolean setCollision, float x, float y) {
 		this(image, setCollision);
 		this.setX(x);
 		this.setY(y);
 	}
 	/**
 	 * Copy constructor
+	 *
 	 * @param other Object being copied
 	 */
 	public Map(Map other) {

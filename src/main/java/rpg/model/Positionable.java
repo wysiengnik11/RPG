@@ -1,5 +1,7 @@
 package rpg.model;
 
+import org.newdawn.slick.geom.Vector2f;
+
 /**
  * This class holds position of an object from top left corner of the screen
  *
@@ -8,47 +10,52 @@ package rpg.model;
  * @since 2019-12-23
  */
 class Positionable {
-	/** X position */
-	private int x;
-	/** Y position */
-	private int y;
+	private Vector2f position = null;
 
 	/** Default constructor */
-	public Positionable() {
-		this(0,0);
-	}
-
+	public Positionable() {}
 	/**
 	 * Constructor taking position
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 */
-	public Positionable(int x, int y) {
-		this.x = x;
-		this.y = y;
+	public Positionable(float x, float y) {
+		this.position = new Vector2f(x,y);
+	}
+	public Positionable(Vector2f position) {
+		this.position = position.copy();
 	}
 	/**
 	 * Copy constructor
 	 * @param other Object being copied
 	 */
 	public Positionable(final Positionable other) {
-		this.x = other.getX();
-		this.y = other.getY();
+		this.position = other.getPosition();
 	}
 
-	public int getX() {
-		return x;
+	public float getX() {
+		return position.x;
 	}
 
-	public void setX(int x) {
-		this.x = x;
+	public void setX(float x) {
+		position.x = x;
 	}
 
-	public int getY() {
-		return y;
+	public float getY() {
+		return position.y;
 	}
 
-	public void setY(int y) {
-		this.y = y;
+	public void setY(float y) {
+		position.y = y;
+	}
+
+	public void setPosition(float x, float y) {
+		this.position = new Vector2f(x,y);
+	}
+	public void setPosition(Vector2f position) {
+		this.position = position.copy();
+	}
+	public Vector2f getPosition() {
+		return new Vector2f(position);
 	}
 }
