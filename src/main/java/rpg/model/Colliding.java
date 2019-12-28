@@ -61,7 +61,7 @@ public class Colliding extends Positionable {
 	 */
 	public Colliding(Shape boundingBox, float x, float y) {
 		super(x,y);
-		this.boundingBox = boundingBox;
+		this.setBoundingBox(boundingBox);
 	}
 	/**
 	 * Constructor taking collision detection shape and position
@@ -71,7 +71,7 @@ public class Colliding extends Positionable {
 	 */
 	public Colliding(Shape boundingBox, Vector2f position) {
 		super(position);
-		this.boundingBox = boundingBox;
+		this.setBoundingBox(boundingBox);
 	}
 	/**
 	 * Constructor loading a shape from a file as a bounding box

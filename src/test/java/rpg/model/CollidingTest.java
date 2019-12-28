@@ -1,9 +1,9 @@
 package rpg.model;
 
 import org.junit.Test;
-import org.newdawn.slick.geom.Circle;
-import org.newdawn.slick.geom.Polygon;
-import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.*;
+
+import java.io.*;
 
 import static org.junit.Assert.*;
 
@@ -74,25 +74,59 @@ public class CollidingTest {
 
 	@Test
 	public void getBoundingBox() {
-	}
-
-	@Test
-	public void setBoundingBox() {
-	}
-
-	@Test
-	public void testSetBoundingBox() {
+		Shape circle = new Circle(0,0,10);
+		Colliding colliding = new Colliding(circle);
+		assertSame(colliding.getBoundingBox().getClass(),circle.getClass());
+		assertEquals(colliding.getBoundingBox().getLocation().getX(), circle.getLocation().getX(), 0.0);
+		assertEquals(colliding.getBoundingBox().getLocation().getY(), circle.getLocation().getY(), 0.0);
 	}
 
 	@Test
 	public void setX() {
+		Colliding colliding = new Colliding(new Circle(0,0,1),0,0);
+		colliding.setX(20);
+		assertEquals(20, colliding.getX(), 0.0);
+		assertEquals(20, colliding.getBoundingBox().getLocation().getX(), 0.0);
 	}
 
 	@Test
 	public void setY() {
+		Colliding colliding = new Colliding(new Circle(0,0,1),0,0);
+		colliding.setY(20);
+		assertEquals(20, colliding.getY(), 0.0);
+		assertEquals(20, colliding.getBoundingBox().getLocation().getY(), 0.0);
 	}
 
 	@Test
 	public void hasBoundingBox() {
+		Colliding colliding = new Colliding();
+		assertFalse(colliding.hasBoundingBox());
+		colliding = new Colliding(new Circle(0,0,1));
+		assertTrue(colliding.hasBoundingBox());
+	}
+
+	@Test
+	public void setBoundingBox() {
+		Colliding colliding = new Colliding();
+		assertFalse(colliding.hasBoundingBox());
+		colliding.setBoundingBox(new Circle(0,0,1));
+		assertTrue(colliding.hasBoundingBox());
+
+		Shape shape = new Circle(0,0,1);
+		shape.setLocation(0,0);
+		try {
+			FileOutputStream out = new FileOutputStream("testsave.sav");
+			ObjectOutputStream save = new ObjectOutputStream(out);
+			save.writeObject(shape);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		colliding.setBoundingBox("testsave.sav");
+		assertEquals(colliding.getBoundingBox().getLocation().getX(), shape.getLocation().getX(), 0.0);
+		assertEquals(colliding.getBoundingBox().getLocation().getY(), shape.getLocation().getY(), 0.0);
+
+		File f = new File("testsave.sav");
+		assertTrue(f.delete());
 	}
 }
