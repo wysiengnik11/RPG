@@ -7,4 +7,12 @@ public class StaticImageEntity extends Entity {
 	public StaticImageEntity(Image image) {
 		this.image = image;
 	}
+
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
 }

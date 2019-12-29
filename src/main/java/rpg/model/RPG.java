@@ -1,5 +1,6 @@
 package rpg.model;
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Vector2f;
@@ -71,9 +72,27 @@ public class RPG {
 	 */
 	public void getImages(ArrayList<Image> images, ArrayList<Vector2f> vectors) {
 		images.clear();
-		images.add(level.getMapImage());
 		vectors.clear();
+		images.add(level.getMapImage());
 		vectors.add(level.getPosition());
+		for (StaticImageEntity entity:
+				staticImageEntities) {
+			images.add(entity.getImage());
+			vectors.add(entity.getPosition());
+		}
+	}
+
+	/**
+	 * Function used by controller to get animations to draw
+	 */
+	public void getAnimations(ArrayList<Animation> animations, ArrayList<Vector2f> vectors) {
+		animations.clear();
+		vectors.clear();
+		for (AnimatedEntity entity:
+		     animatedEntities) {
+			animations.add(entity.getCurrentAnimation());
+			vectors.add(entity.getPosition());
+		}
 	}
 
 	/**

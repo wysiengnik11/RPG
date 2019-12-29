@@ -10,8 +10,21 @@ class Entity extends Colliding {
 	 */
 	private Vector2f velocity = new Vector2f(0,0);
 
-	Entity(){
-		super();
+	public Entity(){}
+	public Entity(Vector2f velocity) {
+		this.velocity = velocity;
+	}
+	public Entity(Vector2f velocity, Vector2f position) {
+		super(position);
+		this.velocity = velocity;
+	}
+	public Entity(Vector2f velocity, float x, float y) {
+		super(x,y);
+		this.velocity = velocity;
+	}
+	public Entity(float xVel, float yVel, float x, float y) {
+		super(x,y);
+		this.velocity.set(xVel,yVel);
 	}
 
 	/**

@@ -47,10 +47,13 @@ public class GameBasic extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
+		// Get and check images and vectors from the model
 		ArrayList<Image> images = new ArrayList<>();
 		ArrayList<Vector2f> vectors = new ArrayList<>();
 		model.getImages(images,vectors);
-
+		if(images.size() != vectors.size())
+			throw new SlickException("Mismatched Image and Vector lists for render");
+		// Iterate over the images and draw them according to their position vectors
 		Iterator<Image> oi = images.iterator();
 		Iterator<Vector2f> vi = vectors.iterator();
 		while(oi.hasNext()) {
