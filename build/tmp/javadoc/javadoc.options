@@ -4,7 +4,9 @@
 -quiet 
 -windowtitle 'RPG 1.0-SNAPSHOT API'
 'D:\\RPG\\src\\main\\java\\rpg\\Game.java'
+'D:\\RPG\\src\\main\\java\\rpg\\GameBasic.java'
 'D:\\RPG\\src\\main\\java\\rpg\\MainMenu.java'
+'D:\\RPG\\src\\main\\java\\rpg\\model\\AnimatedEntity.java'
 'D:\\RPG\\src\\main\\java\\rpg\\model\\Colliding.java'
 'D:\\RPG\\src\\main\\java\\rpg\\model\\Entity.java'
 'D:\\RPG\\src\\main\\java\\rpg\\model\\Item.java'
@@ -14,6 +16,7 @@
 'D:\\RPG\\src\\main\\java\\rpg\\model\\Positionable.java'
 'D:\\RPG\\src\\main\\java\\rpg\\model\\RPG.java'
 'D:\\RPG\\src\\main\\java\\rpg\\model\\Settings.java'
+'D:\\RPG\\src\\main\\java\\rpg\\model\\StaticImageEntity.java'
 'D:\\RPG\\src\\main\\java\\rpg\\Play.java'
 'D:\\RPG\\src\\main\\java\\StateBasedGame_from_a_tutorial\\Game.java'
 'D:\\RPG\\src\\main\\java\\StateBasedGame_from_a_tutorial\\MainMenu.java'
