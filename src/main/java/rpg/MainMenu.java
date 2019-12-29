@@ -15,6 +15,7 @@ import java.util.Iterator;
 
 /**
  * Main menu game state
+ * Probably not gonna use
  */
 public class MainMenu extends BasicGameState {
 	/** State's ID */
@@ -43,11 +44,10 @@ public class MainMenu extends BasicGameState {
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
-
 	}
 
-	public void render(GameContainer container, Game game, Graphics g) throws SlickException {
-		//TODO get the bloody thing to render something
+//	public void render(GameContainer container, Game game, Graphics g) throws SlickException {
+//		//TODO get the bloody thing to render something
 //		ArrayList<Image> images = new ArrayList<>();
 //		ArrayList<Vector2f> vectors = new ArrayList<>();
 //		game.getModel().getImages(images,vectors);
@@ -59,12 +59,12 @@ public class MainMenu extends BasicGameState {
 //			Image img = oi.next();
 //			g.drawImage(img,nextVector.getX(),nextVector.getY());
 //		}
-		g.drawString("I'm in",5,5);
-	}
+//		g.drawString("I'm in",5,5);
+//	}
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-		render(container,(Game) game, g);
+
 	}
 
 	@Override

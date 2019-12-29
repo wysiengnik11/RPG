@@ -5,9 +5,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Vector2f;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Main game model class
@@ -18,19 +16,23 @@ import java.util.List;
  */
 public class RPG {
 
-	/** Map of the current level */
-	private Level level;
-
-	/** Player character */
-	private Player player;
-
 	/** Game settings */
 	private Settings settings;
 
+	/** Map of the current level */
+	private Level level = new Level();
+
+	/** Player character */
+	private Player player = new Player();
+
+	/** Movable static image entities */
+	private ArrayList<StaticImageEntity> staticImageEntities = new ArrayList<>();
+
+	/** Movable animated entities */
+	private ArrayList<AnimatedEntity> animatedEntities = new ArrayList<>();
+
 	/** Default constructor */
 	public RPG(){
-		level = new Level();
-		player = new Player();
 		settings = new Settings();
 	}
 
@@ -42,8 +44,6 @@ public class RPG {
 	 * @param settingsPath Path to saved settings file
 	 */
 	public RPG(String settingsPath) {
-		level = new Level();
-		player = new Player();
 		// Check if file exists
 		if(new File(settingsPath).exists()) {
 			if(!importSettings()) {
@@ -60,6 +60,7 @@ public class RPG {
 	public void init() {
 		try {
 			level.setMapImage(new Image("build/resources/main/States/Play/Levels/floor_0/map.png"));
+
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
@@ -68,8 +69,10 @@ public class RPG {
 	/**
 	 * Function used by controller to get images to draw
 	 */
-	public void getImages(List<Image> images, List<Vector2f> vectors) {
+	public void getImages(ArrayList<Image> images, ArrayList<Vector2f> vectors) {
+		images.clear();
 		images.add(level.getMapImage());
+		vectors.clear();
 		vectors.add(level.getPosition());
 	}
 
@@ -93,18 +96,28 @@ public class RPG {
 	/**
 	 * Settings importing method
 	 * Does not check if file exists
-	 * @return  Returns true if import was successful, false otherwise
+	 *
+	 * @return Returns true if import was successful, false otherwise
 	 */
 	public boolean importSettings() {
 		try {
-			FileInputStream inp = new FileInputStream(settings.savePath + settings.saveName);
-			ObjectInputStream save = new ObjectInputStream(inp);
-			settings = (Settings) save.readObject();
+			File f = new File(settings.savePath + settings.saveName);
+			if(f.exists()) {
+				FileInputStream inp = new FileInputStream(settings.savePath + settings.saveName);
+				ObjectInputStream save = new ObjectInputStream(inp);
+				settings = (Settings) save.readObject();
+			}
+			else return false;
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 			return false;
 		}
 		return true;
+	}
+
+	public void update(int delta) {
+		player.update(delta);
+
 	}
 
 	public Level getLevel() {
@@ -130,25 +143,4 @@ public class RPG {
 	public void setSettings(Settings settings) {
 		this.settings = settings;
 	}
-//	public static void main(String[] args) {
-//		System.out.println("Main started");
-//		RPG game = new RPG();
-//		System.out.println("Before: " + game.settings.getWindowHeight() + " " + game.settings.isShowFPS());
-//		if(!game.saveSettings())
-//			System.out.println("FAK - Export");
-//		else {
-//			System.out.println("Saved");
-//		}
-//
-//		game.settings.setShowFPS(true);
-//		game.settings.setWindowHeight(200);
-//		System.out.println("Changed: " + game.settings.getWindowHeight() + " " + game.settings.isShowFPS());
-//
-//		if(!game.importSettings("Saved settings.sav"))
-//			System.out.println("FAK - Import");
-//		else {
-//			System.out.println("Imported");
-//			System.out.println("After: " + game.settings.getWindowHeight() + " " + game.settings.isShowFPS());
-//		}
-//	}
 }

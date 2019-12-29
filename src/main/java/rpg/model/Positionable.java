@@ -10,7 +10,7 @@ import org.newdawn.slick.geom.Vector2f;
  * @since 2019-12-23
  */
 class Positionable {
-	private Vector2f position = new Vector2f();
+	private Vector2f position = null;
 
 	/** Default constructor */
 	public Positionable() {}
@@ -23,14 +23,14 @@ class Positionable {
 		this.position = new Vector2f(x,y);
 	}
 	public Positionable(Vector2f position) {
-		this.position = position.copy();
+		this.position = position;
 	}
 	/**
 	 * Copy constructor
 	 * @param other Object being copied
 	 */
 	public Positionable(final Positionable other) {
-		this.position = other.getPosition();
+		this.position = other.getPosition().copy();
 	}
 
 	public float getX() {
@@ -40,6 +40,8 @@ class Positionable {
 	public void setX(float x) {
 		if(position != null)
 			position.x = x;
+		else
+			position = new Vector2f(x,0);
 	}
 
 	public float getY() {
@@ -49,6 +51,8 @@ class Positionable {
 	public void setY(float y) {
 		if(position != null)
 			position.y = y;
+		else
+			position = new Vector2f(0,y);
 	}
 
 	public void setPosition(float x, float y) {

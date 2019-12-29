@@ -12,6 +12,8 @@ import java.io.File;
  * A simple rpg game for collage
  * I am yet to decide what the story is going to be
  *
+ * Probably not gonna use
+ *
  * @author Janusz Kubiak
  * @version 1.0
  * @since 2019-12-23
@@ -51,8 +53,7 @@ public class Game extends StateBasedGame {
 	 */
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {
-		this.getState(mainMenu).init(container , this);
-		this.getState(play).init(container , this);
+
 
 		this.enterState(mainMenu);
 	}

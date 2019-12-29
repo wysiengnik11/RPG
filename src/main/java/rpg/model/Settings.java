@@ -14,7 +14,7 @@ public class Settings implements Serializable {
 	/*-------------------------------------------------------------- Misc Settings  --------------------------------------------------------------*/
 	/*--------------------------------------------------------------------------------------------------------------------------------------------*/
 	/** Name of the settings save file */
-	public String saveName = "Saved settings.sav";
+	public String saveName = "settings.sav";
 	/**
 	 * Path where the settings save file is located
 	 * When string is empty the save location is in the "RPG" folder

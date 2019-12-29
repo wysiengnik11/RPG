@@ -8,6 +8,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 /**
  * Play-time game state
+ * Probably not gonna use
  */
 public class Play extends BasicGameState {
 	/** State's ID */

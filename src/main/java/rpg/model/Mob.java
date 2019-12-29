@@ -1,4 +1,5 @@
 package rpg.model;
 
-class Mob extends Entity {
+class Mob extends AnimatedEntity {
+
 }
