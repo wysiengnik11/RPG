@@ -115,18 +115,16 @@ public class CollidingTest {
 		Shape shape = new Circle(0,0,1);
 		shape.setLocation(0,0);
 		try {
-			FileOutputStream out = new FileOutputStream("testsave.sav");
+			FileOutputStream out = new FileOutputStream("build/resources/test/testsave.sav");
 			ObjectOutputStream save = new ObjectOutputStream(out);
 			save.writeObject(shape);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		colliding.setBoundingBox("testsave.sav");
+		colliding.setBoundingBox("build/resources/test/testsave.sav");
 		assertEquals(colliding.getBoundingBox().getLocation().getX(), shape.getLocation().getX(), 0.0);
 		assertEquals(colliding.getBoundingBox().getLocation().getY(), shape.getLocation().getY(), 0.0);
 
-		File f = new File("testsave.sav");
-		f.deleteOnExit();
 	}
 }

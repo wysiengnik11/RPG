@@ -48,6 +48,7 @@ public class RPG {
 		// Check if file exists
 		if(new File(settingsPath).exists()) {
 			if(!importSettings()) {
+				System.out.println("FIle found");
 				// TODO inform about import failure
 				settings = new Settings();
 			}
@@ -60,7 +61,7 @@ public class RPG {
 	/** Initialize the game */
 	public void init() {
 		try {
-			level.setMapImage(new Image("build/resources/main/States/Play/Levels/floor_0/map.png"));
+			level.setMapImage(new Image("build/resources/main/Play/Levels/floor_0/map.png"));
 
 		} catch (SlickException e) {
 			e.printStackTrace();

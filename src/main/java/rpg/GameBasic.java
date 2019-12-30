@@ -6,6 +6,7 @@ import rpg.model.RPG;
 import rpg.model.Settings;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -43,6 +44,7 @@ public class GameBasic extends BasicGame {
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException {
 
+//		model.update(delta);
 	}
 
 	@Override
@@ -65,8 +67,11 @@ public class GameBasic extends BasicGame {
 
 	public static void main(String[] args) {
 
+//		System.load("D:\\RPG\\build\\resources\\main\\_natives\\jinput-dx8_64.dll");
+//		System.load("D:\\RPG\\build\\resources\\main\\_natives\\jinput-raw_64.dll");
+
 		// sets natives library for lwjgl and slick
-		File JGLLib = new File("build/resources/main/natives");
+		File JGLLib = new File("build/resources/main/_natives");
 		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
 
 		try {
