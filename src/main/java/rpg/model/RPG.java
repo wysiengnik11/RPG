@@ -65,6 +65,15 @@ public class RPG {
 			staticImageEntities.add(new StaticImageEntity(new Image("build/resources/main/images/outlier.png")));
 			staticImageEntities.get(0).setPosition(0,0);
 			staticImageEntities.get(0).setVelocity(new Vector2f(100,100));
+			ArrayList<Animation> animations = new ArrayList<>();
+			Image[] imgs = new Image[2];
+			imgs[0] = new Image("build/resources/main/images/right.png");
+			imgs[1] = new Image("build/resources/main/images/right2.png");
+			animations.add(new Animation(imgs, 200, true));
+			AnimatedEntity anim = new AnimatedEntity(animations);
+			animatedEntities.add(anim);
+			animatedEntities.get(0).setPosition(0,settings.windowHeight-32);
+			animatedEntities.get(0).setVelocity(new Vector2f(100,-100));
 
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -141,8 +150,12 @@ public class RPG {
 	public void update(int delta) {
 		player.update(delta);
 		for (StaticImageEntity s:
-		     staticImageEntities) {
+				staticImageEntities) {
 			s.update(delta);
+		}
+		for (AnimatedEntity a:
+				animatedEntities) {
+			a.update(delta);
 		}
 
 	}

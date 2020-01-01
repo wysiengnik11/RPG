@@ -2,7 +2,7 @@ package rpg.model;
 
 import org.newdawn.slick.Image;
 
-public class StaticImageEntity extends Entity {
+class StaticImageEntity extends Entity {
 
 	/** The image to be displayed */
 	private Image image = null;

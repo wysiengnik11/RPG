@@ -43,7 +43,6 @@ public class GameBasic extends BasicGame {
 
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException {
-
 		model.update(delta);
 	}
 
@@ -56,12 +55,25 @@ public class GameBasic extends BasicGame {
 		if(images.size() != vectors.size())
 			throw new SlickException("Mismatched Image and Vector lists for render");
 		// Iterate over the images and draw them according to their position vectors
-		Iterator<Image> oi = images.iterator();
 		Iterator<Vector2f> vi = vectors.iterator();
-		while(oi.hasNext()) {
-			Vector2f nextVector = vi.next();
-			Image img = oi.next();
-			g.drawImage(img,nextVector.getX(),nextVector.getY());
+		for (Image img:
+		     images) {
+			Vector2f v = vi.next();
+			img.draw(v.x,v.y);
+		}
+
+		// Get and check animations and vectors from the model
+		ArrayList<Animation> animations = new ArrayList<>();
+		vectors.clear();
+		model.getAnimations(animations, vectors);
+		if(animations.size() != vectors.size())
+			throw new SlickException("Mismatched Animation and Vector lists for render");
+		// Iterate over the animations and draw them according to their position vectors
+		vi = vectors.iterator();
+		for (Animation anim:
+				animations) {
+			Vector2f v = vi.next();
+			anim.draw(v.x,v.y);
 		}
 	}
 

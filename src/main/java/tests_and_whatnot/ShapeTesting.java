@@ -9,7 +9,7 @@ import org.newdawn.slick.geom.Shape;
 
 import java.io.File;
 
-public class ShapeTesting extends BasicGame {
+class ShapeTesting extends BasicGame {
 
 	private Shape shape = null;
 	private Shape shape2 = null;
@@ -60,13 +60,12 @@ public class ShapeTesting extends BasicGame {
 
 	public static void main(String[] args) {
 
-		File JGLLib = new File("build/resources/main/natives");
+		File JGLLib = new File("build/resources/main/_natives");
 		if(JGLLib.exists()) System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
 
 		try {
 			AppGameContainer app = new AppGameContainer(new ShapeTesting("Shape test"));
 			app.setDisplayMode(640,480,false);
-			app.setAlwaysRender(true);
 			app.start();
 		} catch (SlickException e) {
 			e.printStackTrace();
