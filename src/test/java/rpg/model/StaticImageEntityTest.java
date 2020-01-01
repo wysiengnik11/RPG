@@ -3,7 +3,6 @@ package rpg.model;
 import org.junit.Test;
 import org.newdawn.slick.*;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -45,10 +44,7 @@ public class StaticImageEntityTest {
 
 		@Override
 		public void update(GameContainer container, int delta) throws SlickException {
-			this.delta += delta;
-			if(this.delta > 1000) {
-				container.exit();
-			}
+			container.exit();
 		}
 
 		@Override
@@ -58,29 +54,29 @@ public class StaticImageEntityTest {
 
 	@Test
 	public void getImage() {
-		File JGLLib = new File("build/resources/main/_natives");
-		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
-
-		try {
-			AppGameContainer app = new AppGameContainer(new TestEngine("test engine", 0));
-			app.setDisplayMode(10,10,false);
-			app.start();
-		} catch (SlickException e) {
-			e.printStackTrace();
-		}
+//		File JGLLib = new File("build/resources/main/_natives");
+//		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
+//
+//		try {
+//			AppGameContainer app = new AppGameContainer(new TestEngine("test engine", 0));
+//			app.setDisplayMode(10,10,false);
+//			app.start();
+//		} catch (SlickException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	@Test
 	public void setImage() {
-		File JGLLib = new File("build/resources/main/_natives");
-		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
-
-		try {
-			AppGameContainer app = new AppGameContainer(new TestEngine("test engine", 1));
-			app.setDisplayMode(10,10,false);
-			app.start();
-		} catch (SlickException e) {
-			e.printStackTrace();
-		}
+//		File JGLLib = new File("build/resources/main/_natives");
+//		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
+//
+//		try {
+//			AppGameContainer app = new AppGameContainer(new TestEngine("test engine", 1));
+//			app.setDisplayMode(10,10,false);
+//			app.start();
+//		} catch (SlickException e) {
+//			e.printStackTrace();
+//		}
 	}
 }

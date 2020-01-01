@@ -7,6 +7,9 @@ import java.util.Collections;
 
 class AnimatedEntity extends Entity {
 
+	/** True if object is to be rendered and displayed */
+	private boolean displayed = true;
+
 	/** Currently used animation */
 	private Animation currentAnimation = null;
 
@@ -22,8 +25,8 @@ class AnimatedEntity extends Entity {
 	 * @param animations An array of animations to make the list
 	 */
 	public AnimatedEntity(Animation[] animations) {
-		Collections.addAll(this.animations = new ArrayList<>(), animations);
-		currentAnimation = this.animations.get(0);
+		super();
+		setAnimations(animations);
 	}
 
 	/**
@@ -32,8 +35,50 @@ class AnimatedEntity extends Entity {
 	 * @param animations List of animations to be used by this object
 	 */
 	public AnimatedEntity(ArrayList<Animation> animations) {
+		super();
+		setAnimations(animations);
+	}
+
+	public void setAnimations(Animation[] animations) {
+		Collections.addAll(this.animations = new ArrayList<>(), animations);
+		currentAnimation = this.animations.get(0);
+	}
+
+	public void setAnimations(ArrayList<Animation> animations) {
 		this.animations = animations;
 		currentAnimation = this.animations.get(0);
+	}
+
+	public void addAnimation(Animation animation) {
+		if(this.animations == null)
+			this.animations = new ArrayList<>();
+		this.animations.add(animation);
+		if(this.currentAnimation == null)
+			setCurrentAnimation(0);
+	}
+
+	public void addAnimation(int index, Animation animation) {
+		if(this.animations == null)
+			this.animations = new ArrayList<>();
+		this.animations.add(index, animation);
+		if(this.currentAnimation == null)
+			setCurrentAnimation(0);
+	}
+
+	public void addAnimations(Animation[] animations) {
+		if(this.animations == null)
+			this.animations = new ArrayList<>();
+		Collections.addAll(this.animations, animations);
+		if(this.currentAnimation == null)
+			setCurrentAnimation(0);
+	}
+
+	public void addAnimations(ArrayList<Animation> animations) {
+		if(this.animations == null)
+			this.animations = new ArrayList<>();
+		this.animations.addAll(animations);
+		if(this.currentAnimation == null)
+			setCurrentAnimation(0);
 	}
 
 	/**
@@ -42,9 +87,9 @@ class AnimatedEntity extends Entity {
 	 * @param i Animation number in the animations list
 	 */
 	public void setCurrentAnimation(int i) {
-		currentAnimation.stop();
+		if(currentAnimation == null)
+			currentAnimation = new Animation();
 		currentAnimation = animations.get(i);
-		currentAnimation.start();
 	}
 
 	/**
@@ -56,4 +101,7 @@ class AnimatedEntity extends Entity {
 		return currentAnimation;
 	}
 
+	public boolean isDisplayed() {
+		return displayed;
+	}
 }

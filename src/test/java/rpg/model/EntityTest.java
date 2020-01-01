@@ -29,6 +29,6 @@ public class EntityTest {
 		int delta = 1;
 		e.update(delta);
 		assertEquals(e.getVelocity(),v);
-		assertEquals(e.getPosition(),new Vector2f(0,0).add(v.getTheta()*delta));
+		assertEquals(e.getPosition(),new Vector2f(0,0).add(new Vector2f(v.x*delta/1000.f,v.y*delta/1000.f)));
 	}
 }

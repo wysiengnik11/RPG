@@ -18,7 +18,6 @@ class Mob extends AnimatedEntity {
 	/** Death animation id number in animations list */
 	static final int DEATH = 5;
 
-
 	/** Default constructor */
 	Mob() {}
 	Mob(Animation[] animations) {
@@ -28,21 +27,31 @@ class Mob extends AnimatedEntity {
 		super(animations);
 	}
 
+	void tempupdate() {
+			this.setVelocity(this.getVelocity().add(90.d));
+	}
+
+	@Override
+	public void update(int delta) {
+		super.update(delta);
+		detectDirection();
+	}
+
 	/**
 	 * Detects which way the velocity is pointing and sets current animation accordingly
 	 * Down and up directions are inverted due to
 	 */
 	private void detectDirection() {
 		double theta = getVelocity().getTheta();
-		if(getVelocity().length() <= 1)
+		if(getVelocity().length() <= 1.f)
 			setCurrentAnimation(IDLE);
-		else if(theta >= 225 && theta <= 315 )
+		else if(theta > 225.f && theta < 315.f)
 			setCurrentAnimation(UP);
-		else if(theta >= 135 && theta <= 225)
+		else if(theta >= 135.f && theta <= 225.f)
 			setCurrentAnimation(LEFT);
-		else if(theta >= 45 && theta <= 135)
+		else if(theta > 45.f && theta < 135.f)
 			setCurrentAnimation(DOWN);
-		else if(theta >= 315 && theta <= 45 )
+		else if(theta >= 315.f || theta <= 45.f)
 			setCurrentAnimation(RIGHT);
 	}
 }

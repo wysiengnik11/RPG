@@ -32,6 +32,9 @@ public class RPG {
 	/** Movable animated entities */
 	private ArrayList<AnimatedEntity> animatedEntities = new ArrayList<>();
 
+	/** Mobs */
+	public ArrayList<Mob> mobs = new ArrayList<>();
+
 	/** Default constructor */
 	public RPG(){
 		settings = new Settings();
@@ -48,7 +51,6 @@ public class RPG {
 		// Check if file exists
 		if(new File(settingsPath).exists()) {
 			if(!importSettings()) {
-				System.out.println("FIle found");
 				// TODO inform about import failure
 				settings = new Settings();
 			}
@@ -67,13 +69,36 @@ public class RPG {
 			staticImageEntities.get(0).setVelocity(new Vector2f(100,100));
 			ArrayList<Animation> animations = new ArrayList<>();
 			Image[] imgs = new Image[2];
-			imgs[0] = new Image("build/resources/main/images/right.png");
+			imgs[0] = new Image("build/resources/main/images/right1.png");
 			imgs[1] = new Image("build/resources/main/images/right2.png");
 			animations.add(new Animation(imgs, 200, true));
 			AnimatedEntity anim = new AnimatedEntity(animations);
 			animatedEntities.add(anim);
 			animatedEntities.get(0).setPosition(0,settings.windowHeight-32);
 			animatedEntities.get(0).setVelocity(new Vector2f(100,-100));
+			Mob mob = new Mob();
+			mob.addAnimation(new Animation(new Image[] {new Image("build/resources/main/images/down1.png")},200,true));
+			animations.clear();
+			imgs = new Image[4];
+			for (int i = 0; i < 4; i++)
+				imgs[i] = new Image("build/resources/main/images/down"+(i+1)+".png");
+			animations.add(new Animation(imgs,200,true));
+			imgs = new Image[2];
+			for (int i = 0; i < 2; i++)
+				imgs[i] = new Image("build/resources/main/images/left"+(i+1)+".png");
+			animations.add(new Animation(imgs,200,true));
+			imgs = new Image[4];
+			for (int i = 0; i < 4; i++)
+				imgs[i] = new Image("build/resources/main/images/up"+(i+1)+".png");
+			animations.add(new Animation(imgs,200,true));
+			imgs = new Image[2];
+			for (int i = 0; i < 2; i++)
+				imgs[i] = new Image("build/resources/main/images/right"+(i+1)+".png");
+			animations.add(new Animation(imgs,200,true));
+			mob.addAnimations(animations);
+			mob.setPosition(200,200);
+			mob.setVelocity(new Vector2f(100,0));
+			this.mobs.add(mob);
 
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -103,9 +128,23 @@ public class RPG {
 		vectors.clear();
 		for (AnimatedEntity entity:
 		     animatedEntities) {
-			animations.add(entity.getCurrentAnimation());
-			vectors.add(entity.getPosition());
+			if(entity.isDisplayed()) {
+				animations.add(entity.getCurrentAnimation());
+				vectors.add(entity.getPosition());
+			}
 		}
+		for (Mob m:
+		     mobs) {
+			if(m.isDisplayed()) {
+				animations.add(m.getCurrentAnimation());
+				vectors.add(m.getPosition());
+			}
+		}
+	}
+
+	public String getString() {
+		return "theta: "+mobs.get(0).getVelocity().getTheta();
+//		return "x: "+mobs.get(0).getVelocity().getX()+ " y: "+mobs.get(0).getVelocity().getY();
 	}
 
 	/**
@@ -147,8 +186,8 @@ public class RPG {
 		return true;
 	}
 
+	private int temp = 0;
 	public void update(int delta) {
-		player.update(delta);
 		for (StaticImageEntity s:
 				staticImageEntities) {
 			s.update(delta);
@@ -157,7 +196,15 @@ public class RPG {
 				animatedEntities) {
 			a.update(delta);
 		}
-
+		temp+=delta;
+		for (Mob mob:
+		     mobs) {
+			if(temp>1000) {
+				mob.tempupdate();
+				temp = 0;
+			}
+			mob.update(delta);
+		}
 	}
 
 	public Level getLevel() {

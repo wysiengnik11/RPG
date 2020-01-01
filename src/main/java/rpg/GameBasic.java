@@ -75,6 +75,7 @@ public class GameBasic extends BasicGame {
 			Vector2f v = vi.next();
 			anim.draw(v.x,v.y);
 		}
+		g.drawString(model.getString(),10,10);
 	}
 
 	public static void main(String[] args) {
