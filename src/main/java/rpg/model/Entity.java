@@ -31,7 +31,10 @@ class Entity extends Colliding {
 	 * Method for updating position of the object according to it's velocity and time since last update
 	 */
 	public void update(int delta) {
-		setPosition( getPosition().add( velocity.getTheta() * delta ));
+		Vector2f posDelta = velocity.copy();
+		posDelta.x *= delta/1000.f;
+		posDelta.y *= delta/1000.f;
+		setPosition(getPosition().add(posDelta));
 	}
 
 	public Vector2f getVelocity() {

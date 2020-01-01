@@ -62,6 +62,9 @@ public class RPG {
 	public void init() {
 		try {
 			level.setMapImage(new Image("build/resources/main/Play/Levels/floor_0/map.png"));
+			staticImageEntities.add(new StaticImageEntity(new Image("build/resources/main/images/outlier.png")));
+			staticImageEntities.get(0).setPosition(0,0);
+			staticImageEntities.get(0).setVelocity(new Vector2f(100,100));
 
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -137,6 +140,10 @@ public class RPG {
 
 	public void update(int delta) {
 		player.update(delta);
+		for (StaticImageEntity s:
+		     staticImageEntities) {
+			s.update(delta);
+		}
 
 	}
 

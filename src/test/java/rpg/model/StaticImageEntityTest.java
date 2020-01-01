@@ -76,14 +76,6 @@ public class StaticImageEntityTest {
 		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
 
 		try {
-			Process proc = Runtime.getRuntime().exec("cmd set PATH=%PATH%;D:/RPG/build/main/_natives");
-			proc.waitFor();
-		}
-		catch (IOException | InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		try {
 			AppGameContainer app = new AppGameContainer(new TestEngine("test engine", 1));
 			app.setDisplayMode(10,10,false);
 			app.start();

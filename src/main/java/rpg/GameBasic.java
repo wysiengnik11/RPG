@@ -6,7 +6,6 @@ import rpg.model.RPG;
 import rpg.model.Settings;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -30,8 +29,9 @@ public class GameBasic extends BasicGame {
 	@Override
 	public void init(GameContainer container) throws SlickException {
 		model.importSettings();
+		model.getSettings().windowHeight = 640;
 		Settings settings = model.getSettings();
-		container.setMaximumLogicUpdateInterval(1000 / settings.targetFPS);
+//		container.setMaximumLogicUpdateInterval(1000 / settings.targetFPS);
 		container.setTargetFrameRate(settings.targetFPS);
 		container.setAlwaysRender(settings.alwaysRender);
 		container.setShowFPS(settings.showFPS);
@@ -44,7 +44,7 @@ public class GameBasic extends BasicGame {
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException {
 
-//		model.update(delta);
+		model.update(delta);
 	}
 
 	@Override
@@ -67,16 +67,17 @@ public class GameBasic extends BasicGame {
 
 	public static void main(String[] args) {
 
-//		System.load("D:\\RPG\\build\\resources\\main\\_natives\\jinput-dx8_64.dll");
-//		System.load("D:\\RPG\\build\\resources\\main\\_natives\\jinput-raw_64.dll");
-
 		// sets natives library for lwjgl and slick
 		File JGLLib = new File("build/resources/main/_natives");
 		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
 
+		GameBasic game = new GameBasic(title);
+		game.model.importSettings();
+		game.model.getSettings().windowHeight = 640;
+
 		try {
-			AppGameContainer container = new AppGameContainer(new GameBasic(title));
-			container.setDisplayMode(640,480,false);
+			AppGameContainer container = new AppGameContainer(game);
+			container.setDisplayMode(game.model.getSettings().windowWidth,game.model.getSettings().windowHeight,game.model.getSettings().fullscreen);
 			container.start();
 		} catch (SlickException e) {
 			e.printStackTrace();
