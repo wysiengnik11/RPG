@@ -95,6 +95,10 @@ public class RPG {
 			for (int i = 0; i < 2; i++)
 				imgs[i] = new Image("build/resources/main/images/right"+(i+1)+".png");
 			animations.add(new Animation(imgs,200,true));
+			imgs = new Image[] { new Image("build/resources/main/images/dying.png"), new Image("build/resources/main/images/dying.png") };
+			animations.add((new Animation(imgs, 500,true)));
+			imgs = new Image[] {new Image("build/resources/main/images/ded.png"), new Image("build/resources/main/images/ded.png")};
+			animations.add((new Animation(imgs, 200,true)));
 			mob.addAnimations(animations);
 			mob.setPosition(200,200);
 			mob.setVelocity(new Vector2f(100,0));
@@ -102,6 +106,31 @@ public class RPG {
 
 		} catch (SlickException e) {
 			e.printStackTrace();
+		}
+	}
+
+	private int temp = 0;
+	private int i = 0;
+	public void update(int delta) {
+		for (StaticImageEntity s:
+				staticImageEntities) {
+			s.update(delta);
+		}
+		for (AnimatedEntity a:
+				animatedEntities) {
+			a.update(delta);
+		}
+		temp+=delta;
+		for (Mob mob:
+				mobs) {
+			if(i > 5 && temp>500)
+				mob.kill();
+			if(temp>1000 && !mob.isDead()) {
+				mob.tempupdate();
+				temp = 0;
+				++i;
+			}
+			mob.update(delta);
 		}
 	}
 
@@ -184,27 +213,6 @@ public class RPG {
 			return false;
 		}
 		return true;
-	}
-
-	private int temp = 0;
-	public void update(int delta) {
-		for (StaticImageEntity s:
-				staticImageEntities) {
-			s.update(delta);
-		}
-		for (AnimatedEntity a:
-				animatedEntities) {
-			a.update(delta);
-		}
-		temp+=delta;
-		for (Mob mob:
-		     mobs) {
-			if(temp>1000) {
-				mob.tempupdate();
-				temp = 0;
-			}
-			mob.update(delta);
-		}
 	}
 
 	public Level getLevel() {

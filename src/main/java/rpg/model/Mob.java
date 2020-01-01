@@ -16,13 +16,25 @@ class Mob extends AnimatedEntity {
 	/** Right animation id number in animations list */
 	static final int RIGHT = 4;
 	/** Death animation id number in animations list */
-	static final int DEATH = 5;
+	static final int DYING = 5;
+	/** Idle dead animation id number in animations list */
+	static final int DEAD = 6;
+	/** Indicates the mob has died and appropriate animations need to be played */
+	private boolean dead = false;
 
 	/** Default constructor */
 	Mob() {}
+	/**
+	 * @see AnimatedEntity
+	 * @param animations Array of animations to use
+	 */
 	Mob(Animation[] animations) {
 		super(animations);
 	}
+	/**
+	 * @see AnimatedEntity
+	 * @param animations Array list of animations to use
+	 */
 	Mob(ArrayList<Animation> animations) {
 		super(animations);
 	}
@@ -31,10 +43,21 @@ class Mob extends AnimatedEntity {
 			this.setVelocity(this.getVelocity().add(90.d));
 	}
 
+	/**
+	 * @see Entity
+	 * @param delta Time since last update in milliseconds
+	 */
 	@Override
 	public void update(int delta) {
-		super.update(delta);
-		detectDirection();
+		if(dead) {
+			if (getCurrentAnimation().isStopped()) {
+				setCurrentAnimation(DEAD);
+			}
+		}
+		else {
+			super.update(delta);
+			detectDirection();
+		}
 	}
 
 	/**
@@ -51,7 +74,17 @@ class Mob extends AnimatedEntity {
 			setCurrentAnimation(LEFT);
 		else if(theta > 45.f && theta < 135.f)
 			setCurrentAnimation(DOWN);
-		else if(theta >= 315.f || theta <= 45.f)
+		else if((theta >= 315.f && theta <=360) || (theta <= 45.f && theta >= 0))
 			setCurrentAnimation(RIGHT);
+	}
+
+	public boolean isDead() {
+		return dead;
+	}
+
+	public void kill() {
+		dead = true;
+		setCurrentAnimation(DYING);
+		getCurrentAnimation().setLooping(false);
 	}
 }
