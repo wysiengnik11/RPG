@@ -53,7 +53,7 @@ public class AStarTest {
 class TestEngine extends BasicGame {
 
 	private int testCase;
-	private LayerBasedMap map;
+	private TileBasedMap map;
 	/**
 	 * Create a new basic game
 	 *
@@ -67,15 +67,20 @@ class TestEngine extends BasicGame {
 	@Override
 	public void init(GameContainer container) throws SlickException {
 		if(testCase == 0){
-			map = new LayerBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"),2);
+			map = new LayerBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"),0);
+		}
+		else {
+			map = new PropertyBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"), "Blocking");
 		}
 	}
 
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException {
 
+//		System.out.println(map.test());
+
 		AStarPathFinder pathFinder = new AStarPathFinder(map, 100, false);
-		Path path = pathFinder.findPath(null, 8, 17, 8, 24);
+		Path path = pathFinder.findPath(null, 8, 14, 8, 20);
 
 		int length = path.getLength();
 		System.out.println("Found path of length: " + length + ".");
@@ -83,6 +88,7 @@ class TestEngine extends BasicGame {
 		for(int i = 0; i < length; i++) {
 			System.out.println("Move to: " + path.getX(i) + "," + path.getY(i) + ".");
 		}
+
 		container.exit();
 	}
 
@@ -141,12 +147,53 @@ class LayerBasedMap implements TileBasedMap {
 
 	public LayerBasedMap(TiledMap map, int blockingLayerId) {
 		this.map = map;
+		System.out.println(map.getLayerCount());
 		this.blockingLayerId = blockingLayerId;
+	}
+
+	public int test() {
+		return map.getLayerCount();
+	}
+	@Override
+	public boolean blocked(PathFindingContext ctx, int x, int y) {
+		return map.getTileId(x, y, blockingLayerId) != 0;
+	}
+
+	@Override
+	public float getCost(PathFindingContext ctx, int x, int y) {
+		return 1.0f;
+	}
+
+	@Override
+	public int getHeightInTiles() {
+		return map.getHeight();
+	}
+
+	@Override
+	public int getWidthInTiles() {
+		return map.getWidth();
+	}
+
+	@Override
+	public void pathFinderVisited(int arg0, int arg1) {}
+
+}
+
+class PropertyBasedMap implements TileBasedMap {
+
+	private TiledMap map;
+	private String blockingPropertyName;
+
+	public PropertyBasedMap(TiledMap map, String blockingPropertyName) {
+		this.map = map;
+		this.blockingPropertyName = blockingPropertyName;
 	}
 
 	@Override
 	public boolean blocked(PathFindingContext ctx, int x, int y) {
-		return map.getTileId(x, y, blockingLayerId) != 0;
+		// NOTE: Using getTileProperty like this is slow. You should instead cache the results.
+		// For example, set up a HashSet<Integer> that contains all of the blocking tile ids.
+		return map.getTileProperty(map.getTileId(x, y, 0), blockingPropertyName, "false").equals("true");
 	}
 
 	@Override
