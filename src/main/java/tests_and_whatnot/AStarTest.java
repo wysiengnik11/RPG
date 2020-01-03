@@ -10,7 +10,7 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 import java.io.File;
 
 
-public class AStarTest {
+class AStarTest {
 
 	private static final int MAX_PATH_LENGTH = 100;
 
@@ -36,6 +36,8 @@ public class AStarTest {
 			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
 			a.setShowFPS(false);
 			a.start();
+			// this seems broken now
+			// map is probably not working correctly
 			a = new AppGameContainer(new TestEngine("test",1));
 			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
 			a.setShowFPS(false);
@@ -100,16 +102,17 @@ class SimpleMap implements TileBasedMap {
 	private static final int HEIGHT = 10;
 
 	private static final int[][] MAP = {
-			{1,1,1,1,1,1,1,1,1,1},
-			{1,0,0,0,0,0,1,1,1,1},
-			{1,0,1,1,1,0,1,1,1,1},
-			{1,0,1,1,1,0,0,0,1,1},
-			{1,0,0,0,1,1,1,0,1,1},
-			{1,1,1,0,1,1,1,0,0,0},
-			{1,0,1,0,0,0,0,0,1,0},
-			{1,0,1,1,1,1,1,1,1,0},
-			{1,0,0,0,0,0,0,0,0,0},
-			{1,1,1,1,1,1,1,1,1,0}
+		//   0 1 2 3 4 5 6 7 8 9
+	/*0*/   {1,1,1,1,1,1,1,1,1,1},
+	/*1*/	{1,0,0,0,0,0,1,1,1,1},
+	/*2*/	{1,0,1,1,1,0,1,1,1,1},
+	/*3*/	{1,0,1,1,1,0,0,0,1,1},
+	/*4*/	{1,0,0,0,1,1,1,0,1,1},
+	/*5*/	{1,1,1,0,1,1,1,0,0,0},
+	/*6*/	{1,0,1,0,0,0,0,0,1,0},
+	/*7*/	{1,0,1,1,1,1,1,1,1,0},
+	/*8*/	{1,0,0,0,0,0,0,0,0,0},
+	/*9*/	{1,1,1,1,1,1,1,1,1,0}
 	};
 
 	@Override

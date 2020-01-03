@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3d9698-da2b-4db3-b977-7a65bdccc6a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/NavMeshTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/AStarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/AStarTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,8 +183,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeTesting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tests_and_whatnot.ShapeTesting" />
+    <configuration name="NavMeshTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tests_and_whatnot.NavMeshTest" />
       <module name="RPG.main" />
       <extension name="coverage">
         <pattern>
@@ -268,19 +276,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ShapeTesting" />
       <item itemvalue="Application.VectorTesting" />
       <item itemvalue="Application.GameBasic" />
       <item itemvalue="Gradle.RPG [build]" />
       <item itemvalue="Application.AStarTest" />
+      <item itemvalue="Application.NavMeshTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NavMeshTest" />
         <item itemvalue="Application.AStarTest" />
         <item itemvalue="Application.GameBasic" />
         <item itemvalue="Gradle.RPG [build]" />
         <item itemvalue="Application.VectorTesting" />
-        <item itemvalue="Application.ShapeTesting" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578055980150</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Shuffled some things in Level and Map to facilitate TieldMap and TiledBasedMap path finding a bit">
+      <created>1578057287097</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1578057287097</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -454,7 +469,8 @@
     <MESSAGE value="Added simple death animations handling for mob class" />
     <MESSAGE value="Tried to do something with path finding but TiledMap doesn't seem to cooperate" />
     <MESSAGE value="Got it to work, this is the example given here:&#10;https://stackoverflow.com/questions/9742039/a-pathfinding-java-slick2d-library" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got it to work, this is the example given here:&#10;https://stackoverflow.com/questions/9742039/a-pathfinding-java-slick2d-library" />
+    <MESSAGE value="Shuffled some things in Level and Map to facilitate TieldMap and TiledBasedMap path finding a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shuffled some things in Level and Map to facilitate TieldMap and TiledBasedMap path finding a bit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="177" key="#Game" timestamp="1577093242337">
@@ -529,10 +545,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577714753524" />
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578049362088">
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578080634266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578049362088" />
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578080634266" />
     <state x="690" y="299" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576940610080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -569,10 +585,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577123460585" />
-    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1578055978618">
+    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1578057286106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578055978618" />
+    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578057286106" />
     <state x="694" y="280" key="EnvironmentVariablesDialog" timestamp="1577897591845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -589,26 +605,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="224" key="Github.UntrackedFilesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577139071645" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578055862500">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578082817948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578055862500" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578055862500">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817948" />
+    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578082817948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578055862500" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578055862500">
+    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817948" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578082817947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895951" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578055862500" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578055862500">
+    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817947" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578082817948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578055862500" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817948" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1577530320379">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
