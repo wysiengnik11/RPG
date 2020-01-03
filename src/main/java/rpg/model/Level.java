@@ -1,12 +1,7 @@
 package rpg.model;
 
-import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
-import org.newdawn.slick.tiled.TiledMap;
-
-import java.sql.Struct;
 
 /**
  * Class for holding map information
@@ -18,7 +13,7 @@ import java.sql.Struct;
 class Level extends Colliding {
 
 	/** TileD Map */
-	private TiledMap map = null;
+	private Map map = null;
 
 	/** Default constructor */
 	public Level() {
@@ -30,7 +25,7 @@ class Level extends Colliding {
 	 * @param ref Reference path to TileD map file
 	 */
 	public Level(String ref) throws SlickException {
-		map = new TiledMap(ref);
+		map = new Map(ref);
 	}
 	/**
 	 * Constructs a map with an image
@@ -55,7 +50,7 @@ class Level extends Colliding {
 		this(ref);
 		this.setPosition(x,y);
 	}
-	public Level(TiledMap map, float x, float y) {
+	public Level(Map map, float x, float y) {
 		this.map = map;
 		this.setPosition(x,y);
 	}
@@ -65,7 +60,7 @@ class Level extends Colliding {
 	 * @param other Object being copied
 	 */
 	public Level(Level other) {
-		this(other.getMap(), other.getX(), other.getY());
+		this(other.getMap(),other.getX(),other.getY());
 		this.setBoundingBox(other.getBoundingBox());
 	}
 	/**
@@ -73,7 +68,7 @@ class Level extends Colliding {
 	 *
 	 * @return TiledMap
 	 */
-	public TiledMap getMap() {
+	public Map getMap() {
 		return map;
 	}
 	/**
@@ -82,6 +77,6 @@ class Level extends Colliding {
 	 * @param ref Reference path to TileD map file
 	 */
 	public void setMapImage(String ref) throws SlickException {
-		map = new TiledMap(ref);
+		map = new Map(ref);
 	}
 }
