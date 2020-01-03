@@ -1,10 +1,11 @@
 package rpg.model;
 
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.util.pathfinding.Mover;
 
 import java.util.ArrayList;
 
-class Mob extends AnimatedEntity {
+class Mob extends AnimatedEntity implements Mover {
 	/** Idle animation id number in animations list */
 	static final int IDLE = 0;
 	/** Down animation id number in animations list */
@@ -82,7 +83,10 @@ class Mob extends AnimatedEntity {
 		return dead;
 	}
 
-	public void kill() {
+	/**
+	 * Method for when the mob is killed
+	 */
+	void kill() {
 		dead = true;
 		setCurrentAnimation(DYING);
 		getCurrentAnimation().setLooping(false);

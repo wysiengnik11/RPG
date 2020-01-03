@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="45" height="31" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="37">
+ <properties>
+  <property name="enemyTint" type="color" value="#ffa33636"/>
+ </properties>
+ <tileset firstgid="1" name="outdoor" tilewidth="16" tileheight="16" tilecount="288" columns="24">
+  <image source="../../../../Tiled/examples/buch-outdoor.png" width="384" height="192"/>
+  <terraintypes>
+   <terrain name="Grass" tile="150"/>
+   <terrain name="Dirt" tile="100"/>
+   <terrain name="Dark Dirt" tile="34"/>
+   <terrain name="Water" tile="171"/>
+  </terraintypes>
+  <tile id="0" terrain="0,0,0,1"/>
+  <tile id="1" terrain="0,0,1,1"/>
+  <tile id="2" terrain="0,0,1,1"/>
+  <tile id="3" terrain="0,0,1,1"/>
+  <tile id="4" terrain="0,0,1,1"/>
+  <tile id="5" terrain="0,0,1,0"/>
+  <tile id="6" terrain="0,0,0,0" probability="0.1"/>
+  <tile id="7" terrain="1,1,1,2"/>
+  <tile id="8" terrain="1,1,2,2"/>
+  <tile id="9" terrain="1,1,2,2"/>
+  <tile id="10" terrain="1,1,2,2"/>
+  <tile id="11" terrain="1,1,2,2"/>
+  <tile id="12" terrain="1,1,2,1"/>
+  <tile id="13" terrain="0,0,0,2"/>
+  <tile id="14" terrain="0,0,2,2"/>
+  <tile id="15" terrain="0,0,2,2"/>
+  <tile id="16" terrain="0,0,2,2"/>
+  <tile id="17" terrain="0,0,2,2"/>
+  <tile id="18" terrain="0,0,2,0"/>
+  <tile id="24" terrain="0,1,0,1"/>
+  <tile id="25" terrain="1,1,1,0"/>
+  <tile id="26" terrain="1,1,0,1"/>
+  <tile id="27" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="28" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="29" terrain="1,0,1,0"/>
+  <tile id="30" terrain="0,0,0,0" probability="0.1"/>
+  <tile id="31" terrain="1,2,1,2"/>
+  <tile id="32" terrain="2,2,2,1"/>
+  <tile id="33" terrain="2,2,1,2"/>
+  <tile id="34" terrain="2,2,2,2"/>
+  <tile id="35" terrain="2,2,2,2"/>
+  <tile id="36" terrain="2,1,2,1"/>
+  <tile id="37" terrain="0,2,0,2"/>
+  <tile id="38" terrain="2,2,2,0"/>
+  <tile id="39" terrain="2,2,0,2"/>
+  <tile id="40" terrain="2,2,2,2"/>
+  <tile id="42" terrain="2,0,2,0"/>
+  <tile id="48" terrain="0,1,0,1"/>
+  <tile id="49" terrain="1,0,1,1"/>
+  <tile id="50" terrain="0,1,1,1"/>
+  <tile id="51" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="52" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="53" terrain="1,0,1,0"/>
+  <tile id="54" terrain="0,0,0,0" probability="0.1"/>
+  <tile id="55" terrain="1,2,1,2"/>
+  <tile id="56" terrain="2,1,2,2"/>
+  <tile id="57" terrain="1,2,2,2"/>
+  <tile id="58" terrain="2,2,2,2"/>
+  <tile id="59" terrain="2,2,2,2"/>
+  <tile id="60" terrain="2,1,2,1"/>
+  <tile id="61" terrain="0,2,0,2"/>
+  <tile id="62" terrain="2,0,2,2"/>
+  <tile id="63" terrain="0,2,2,2"/>
+  <tile id="66" terrain="2,0,2,0"/>
+  <tile id="72" terrain="0,1,0,1"/>
+  <tile id="73" terrain="0,1,1,0"/>
+  <tile id="74" terrain="1,0,0,1"/>
+  <tile id="75" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="76" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="77" terrain="1,0,1,0"/>
+  <tile id="78" terrain="0,0,0,0" probability="0.1"/>
+  <tile id="79" terrain="1,2,1,2"/>
+  <tile id="80" terrain="1,2,2,1"/>
+  <tile id="81" terrain="2,1,1,2"/>
+  <tile id="82" terrain="2,2,2,2" probability="0.1"/>
+  <tile id="83" terrain="2,2,2,2" probability="0.1"/>
+  <tile id="84" terrain="2,1,2,1"/>
+  <tile id="85" terrain="0,2,0,2"/>
+  <tile id="86" terrain="0,2,2,0"/>
+  <tile id="87" terrain="2,0,0,2"/>
+  <tile id="90" terrain="2,0,2,0"/>
+  <tile id="96" terrain="0,1,0,1"/>
+  <tile id="97" terrain="1,0,0,1"/>
+  <tile id="98" terrain="0,1,1,0"/>
+  <tile id="99" terrain="1,1,1,1" probability="0.05"/>
+  <tile id="100" terrain="1,1,1,1"/>
+  <tile id="101" terrain="1,0,1,0"/>
+  <tile id="102" terrain="0,0,0,0" probability="0.1"/>
+  <tile id="103" terrain="1,2,1,2"/>
+  <tile id="104" terrain="2,1,1,2"/>
+  <tile id="105" terrain="1,2,2,1"/>
+  <tile id="106" terrain="2,2,2,2" probability="0.1"/>
+  <tile id="107" terrain="2,2,2,2" probability="0.1"/>
+  <tile id="108" terrain="2,1,2,1"/>
+  <tile id="109" terrain="0,2,0,2"/>
+  <tile id="110" terrain="2,0,0,2"/>
+  <tile id="111" terrain="0,2,2,0"/>
+  <tile id="114" terrain="2,0,2,0"/>
+  <tile id="120" terrain="0,1,0,0"/>
+  <tile id="121" terrain="1,1,0,0"/>
+  <tile id="122" terrain="1,1,0,0"/>
+  <tile id="123" terrain="1,1,0,0"/>
+  <tile id="124" terrain="1,1,0,0"/>
+  <tile id="125" terrain="1,0,0,0"/>
+  <tile id="126" terrain="0,0,0,0" probability="0.1"/>
+  <tile id="127" terrain="1,2,1,1"/>
+  <tile id="128" terrain="2,2,1,1"/>
+  <tile id="129" terrain="2,2,1,1"/>
+  <tile id="130" terrain="2,2,1,1"/>
+  <tile id="131" terrain="2,2,1,1"/>
+  <tile id="132" terrain="2,1,1,1"/>
+  <tile id="133" terrain="0,2,0,0"/>
+  <tile id="134" terrain="2,2,0,0"/>
+  <tile id="135" terrain="2,2,0,0"/>
+  <tile id="136" terrain="2,2,0,0"/>
+  <tile id="137" terrain="2,2,0,0"/>
+  <tile id="138" terrain="2,0,0,0"/>
+  <tile id="144" terrain="0,0,0,3"/>
+  <tile id="145" terrain="0,0,3,3"/>
+  <tile id="146" terrain="0,0,3,3"/>
+  <tile id="147" terrain="0,0,3,3"/>
+  <tile id="148" terrain="0,0,3,3"/>
+  <tile id="149" terrain="0,0,3,0"/>
+  <tile id="150" terrain="0,0,0,0"/>
+  <tile id="151" terrain="1,1,1,3"/>
+  <tile id="152" terrain="1,1,3,3"/>
+  <tile id="153" terrain="1,1,3,3"/>
+  <tile id="154" terrain="1,1,3,3"/>
+  <tile id="155" terrain="1,1,3,3"/>
+  <tile id="156" terrain="1,1,3,1"/>
+  <tile id="168" terrain="0,3,0,3"/>
+  <tile id="169" terrain="3,3,3,0"/>
+  <tile id="170" terrain="3,3,0,3"/>
+  <tile id="171" terrain="3,3,3,3"/>
+  <tile id="172" terrain="3,3,3,3"/>
+  <tile id="173" terrain="3,0,3,0"/>
+  <tile id="174" terrain="0,0,0,0"/>
+  <tile id="175" terrain="1,3,1,3"/>
+  <tile id="176" terrain="3,3,3,1"/>
+  <tile id="177" terrain="3,3,1,3"/>
+  <tile id="178" terrain="3,3,3,3"/>
+  <tile id="179" terrain="3,3,3,3"/>
+  <tile id="180" terrain="3,1,3,1"/>
+  <tile id="192" terrain="0,3,0,3"/>
+  <tile id="193" terrain="3,0,3,3"/>
+  <tile id="194" terrain="0,3,3,3"/>
+  <tile id="195" terrain="3,3,3,3"/>
+  <tile id="196" terrain="3,3,3,3"/>
+  <tile id="197" terrain="3,0,3,0"/>
+  <tile id="198" terrain="0,0,0,0"/>
+  <tile id="199" terrain="1,3,1,3"/>
+  <tile id="200" terrain="3,1,3,3"/>
+  <tile id="201" terrain="1,3,3,3"/>
+  <tile id="202" terrain="3,3,3,3"/>
+  <tile id="203" terrain="3,3,3,3"/>
+  <tile id="204" terrain="3,1,3,1"/>
+  <tile id="216" terrain="0,3,0,3"/>
+  <tile id="217" terrain="0,3,3,0"/>
+  <tile id="218" terrain="3,0,0,3"/>
+  <tile id="219" terrain="3,3,3,3"/>
+  <tile id="220" terrain="3,3,3,3"/>
+  <tile id="221" terrain="3,0,3,0"/>
+  <tile id="222" terrain="0,0,0,0"/>
+  <tile id="223" terrain="1,3,1,3"/>
+  <tile id="224" terrain="1,3,3,1"/>
+  <tile id="225" terrain="3,1,1,3"/>
+  <tile id="226" terrain="3,3,3,3"/>
+  <tile id="227" terrain="3,3,3,3"/>
+  <tile id="228" terrain="3,1,3,1"/>
+  <tile id="240" terrain="0,3,0,3"/>
+  <tile id="241" terrain="3,0,0,3"/>
+  <tile id="242" terrain="0,3,3,0"/>
+  <tile id="243" terrain="3,3,3,3"/>
+  <tile id="244" terrain="3,3,3,3"/>
+  <tile id="245" terrain="3,0,3,0"/>
+  <tile id="246" terrain="0,0,0,0"/>
+  <tile id="247" terrain="1,3,1,3"/>
+  <tile id="248" terrain="3,1,1,3"/>
+  <tile id="249" terrain="1,3,3,1"/>
+  <tile id="250" terrain="3,3,3,3"/>
+  <tile id="251" terrain="3,3,3,3"/>
+  <tile id="252" terrain="3,1,3,1"/>
+  <tile id="264" terrain="0,3,0,0"/>
+  <tile id="265" terrain="3,3,0,0"/>
+  <tile id="266" terrain="3,3,0,0"/>
+  <tile id="267" terrain="3,3,0,0"/>
+  <tile id="268" terrain="3,3,0,0"/>
+  <tile id="269" terrain="3,0,0,0"/>
+  <tile id="270" terrain="0,0,0,0"/>
+  <tile id="271" terrain="1,3,1,1"/>
+  <tile id="272" terrain="3,3,1,1"/>
+  <tile id="273" terrain="3,3,1,1"/>
+  <tile id="274" terrain="3,3,1,1"/>
+  <tile id="275" terrain="3,3,1,1"/>
+  <tile id="276" terrain="3,1,1,1"/>
+ </tileset>
+ <layer id="4" name="BlockingLayer" width="45" height="31" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2TXQrAMAiD3Ql2/9sOH4QgKyXofoQIpdIZEz6YmeorAudh5mdSTcsceSdxxswTcue8ytz7R9/xjbdep55tkW1197j0bllljXfGLTR+P1nok3vWF/WslplHn9wze3wW9ayWmUcf7yuFuyp7dtpOn9i186x+f8unmlN6ERABERABERABERABEfgDgQszwetNzBUAAA==
+  </data>
+ </layer>
+ <layer id="1" name="Ground" width="45" height="31">
+  <data encoding="base64" compression="gzip">
+   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
+  </data>
+ </layer>
+ <layer id="2" name="Fringe" width="45" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECtWXZ07EMBCFB4l2An7RTsCNKJeg/JwLcAUInRPQ2wkQHU5AbycAvkh4Ze3aWSfyZpORnjayx55nv/jFKyIyCaZAnWIWsnMVJtzbI9IHTAyZhwr/DsN3BBjuEwFcTW5C7gpYBWug7DDcQ+qa3D2S98EBOAwZ2OWcM+pfgEtwBa5BXeIFoq/gDYxb58LF/8HV2KW2Jeou/9f+9nAwZ8DTXXrzDhV3raqDjv02Z8BKq8Uj3qJ4jOI1moA6kMZbFI9RvEbxnEKcy1433qJ4jOI1iucU4hxj3Xn0xVsUj1G8RlOfKRIx1v1I4SfwDM6LkAgYY3to87q3A8b7Un7o+AWxeM8z14KvWMXbE/h1+k6zGHkPqnin4fujvm9nuvwy7zT2uQnZ+qx8+05TtTtAyNrqdgfI0iJkvbFztvjObIINsA5iz9+J+U7heQKOwVFNON/D8w7cgpuKcEZvQXdBf+E9aIkveH6CD/AO+rmDDzju4S0DIzTgteqaBr0F3QX9hfegbYzCd6wkzj4y6C3oLugvvAeZ0U6TzMERO9Fb0F3QX3gPMiOvJpmTRe707WceTSJTakznO0++/WzWxDV+mtlnGhWKP7j+b6ez+c5T6H76xhumf+NscIbMFQAA
+  </data>
+ </layer>
+ <objectgroup id="3" name="Objects">
+  <object id="1" name="maggots" type="location" x="435" y="74" width="155" height="99">
+   <properties>
+    <property name="spawncount" type="int" value="5"/>
+    <property name="spawntype" value="maggot"/>
+   </properties>
+  </object>
+  <object id="2" name="discover chest" type="trigger" x="201" y="200" width="127" height="127">
+   <properties>
+    <property name="script" value="chest-discovered.lua"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="3" name="unreachable" type="Fixture" x="2" y="158">
+   <properties>
+    <property name="friction" type="float" value="1"/>
+    <property name="static" type="bool" value="true"/>
+   </properties>
+   <polygon points="0,0 55,-23 96,-117 110,-61 104,-42 119,-33 116,6 104,9 100,36 60,43 53,58 43,58 34,74 21,69 18,90 0,89"/>
+  </object>
+  <object id="5" name="guard" type="NPC" x="22" y="361">
+   <polyline points="-3,120 87,91 154,96 181,16 273,-1"/>
+  </object>
+  <object id="6" name="guard" type="NPC" x="277" y="18">
+   <polyline points="0,0 75,78 133,82 176,179 274,183"/>
+  </object>
+  <object id="10" gid="282" x="413.333" y="225.333" width="16" height="16"/>
+  <object id="11" gid="282" x="421.667" y="218" width="16" height="16"/>
+  <object id="12" gid="2147483930" x="423" y="235.333" width="16" height="16"/>
+  <object id="13" gid="282" x="5" y="70" width="16" height="16"/>
+  <object id="14" gid="282" x="-3.66667" y="80.3333" width="16" height="16"/>
+  <object id="16" gid="283" x="538" y="418.333" width="16" height="16"/>
+  <object id="17" gid="283" x="407.667" y="462" width="16" height="16"/>
+  <object id="18" gid="283" x="417" y="473.667" width="16" height="16"/>
+  <object id="19" gid="283" x="402.667" y="469" width="16" height="16"/>
+  <object id="21" gid="2147483930" x="683.333" y="260.5" width="16" height="16"/>
+  <object id="22" gid="282" x="692.167" y="269.167" width="16" height="16"/>
+  <object id="23" gid="282" x="701.667" y="247.833" width="16" height="16"/>
+  <object id="24" gid="282" x="688.5" y="242" width="16" height="16"/>
+  <object id="25" gid="282" x="670.5" y="263.5" width="16" height="16"/>
+  <object id="26" gid="282" x="680" y="284" width="16" height="16"/>
+  <object id="27" gid="282" x="643.833" y="283.667" width="16" height="16"/>
+  <object id="28" gid="282" x="63.4165" y="386" width="16" height="16"/>
+  <object id="29" gid="282" x="9.0835" y="356.167" width="16" height="16"/>
+  <object id="30" gid="282" x="11.9165" y="385" width="16" height="16"/>
+  <object id="31" gid="282" x="54.2495" y="378.5" width="16" height="16"/>
+  <object id="32" gid="2147483930" x="2.4165" y="364.5" width="16" height="16"/>
+  <object id="33" gid="2147483930" x="41.5835" y="382.833" width="16" height="16"/>
+  <object id="34" type="Sign" gid="257" x="670.667" y="87" width="16" height="16">
+   <properties>
+    <property name="text" value="East West"/>
+   </properties>
+  </object>
+  <object id="36" name="player-start" type="Location" x="192" y="160" width="16" height="16"/>
+ </objectgroup>
+</map>

@@ -1,8 +1,12 @@
 package rpg.model;
 
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
+import org.newdawn.slick.tiled.TiledMap;
+
+import java.sql.Struct;
 
 /**
  * Class for holding map information
@@ -13,8 +17,8 @@ import org.newdawn.slick.geom.Vector2f;
  */
 class Level extends Colliding {
 
-	/** Map image */
-	private Image mapImage = null;
+	/** TileD Map */
+	private TiledMap map = null;
 
 	/** Default constructor */
 	public Level() {
@@ -23,68 +27,36 @@ class Level extends Colliding {
 	/**
 	 * Constructs a map with an image attached
 	 *
-	 * @param mapImage Map image
+	 * @param ref Reference path to TileD map file
 	 */
-	public Level(Image mapImage) {
-		this(mapImage, false);
-	}
-	/**
-	 * Constructs a map with an image and may set the collision to a basic rectangle around the image
-	 *
-	 * @param mapImage Map image
-	 * @param setRectangleCollision If true, sets collision to a basic rectangle around the image
-	 */
-	public Level(Image mapImage, boolean setRectangleCollision) {
-		super();
-		if(setRectangleCollision)
-			setBoundingBox(new Rectangle(0,0, mapImage.getWidth(), mapImage.getHeight()));
-		this.mapImage = mapImage;
+	public Level(String ref) throws SlickException {
+		map = new TiledMap(ref);
 	}
 	/**
 	 * Constructs a map with an image
 	 * Sets position
 	 *
-	 * @param mapImage Map image
+	 * @param ref Reference path to TileD map file
 	 * @param position Vector2f position
 	 */
-	public Level(Image mapImage, Vector2f position) {
-		this(mapImage);
-		setPosition(position);
-	}
-	/**
-	 * Constructs a map with an image and sets collision of the map to a basic rectangle around the image
-	 * Sets position
-	 *
-	 * @param mapImage Map image
-	 * @param setRectangleCollision If true, sets collision to a basic rectangle around the image
-	 * @param position Vector2f position
-	 */
-	public Level(Image mapImage, boolean setRectangleCollision, Vector2f position) {
-		this(mapImage, setRectangleCollision);
+	public Level(String ref, Vector2f position) throws SlickException {
+		this(ref);
 		setPosition(position);
 	}
 	/**
 	 * Constructs a map with an image
 	 * Sets position
 	 *
-	 * @param mapImage Map image
+	 * @param ref Reference path to TileD map file
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 */
-	public Level(Image mapImage, float x, float y) {
-		this(mapImage, true,x,y);
+	public Level(String ref, float x, float y) throws SlickException {
+		this(ref);
+		this.setPosition(x,y);
 	}
-	/**
-	 * Constructs a map with an image and may set the collision of the map to a basic rectangle around the image
-	 * Sets position
-	 *
-	 * @param mapImage Map image
-	 * @param setRectangleCollision If true, sets collision of the map to a basic rectangle around the image
-	 * @param x X coordinate
-	 * @param y Y coordinate
-	 */
-	public Level(Image mapImage, boolean setRectangleCollision, float x, float y) {
-		this(mapImage, setRectangleCollision);
+	public Level(TiledMap map, float x, float y) {
+		this.map = map;
 		this.setPosition(x,y);
 	}
 	/**
@@ -93,23 +65,23 @@ class Level extends Colliding {
 	 * @param other Object being copied
 	 */
 	public Level(Level other) {
-		this(other.getMapImage(), false, other.getX(), other.getY());
+		this(other.getMap(), other.getX(), other.getY());
 		this.setBoundingBox(other.getBoundingBox());
 	}
 	/**
-	 * Returns the map image
+	 * Returns the TileD map of the level
 	 *
-	 * @return Map image
+	 * @return TiledMap
 	 */
-	public Image getMapImage() {
-		return mapImage;
+	public TiledMap getMap() {
+		return map;
 	}
 	/**
-	 * Sets the map's image to image
+	 * Sets the map to a TileD map referenced by ref
 	 *
-	 * @param mapImage Image to set map's image to
+	 * @param ref Reference path to TileD map file
 	 */
-	public void setMapImage(Image mapImage) {
-		this.mapImage = mapImage;
+	public void setMapImage(String ref) throws SlickException {
+		map = new TiledMap(ref);
 	}
 }

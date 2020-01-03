@@ -63,7 +63,7 @@ public class RPG {
 	/** Initialize the game */
 	public void init() {
 		try {
-			level.setMapImage(new Image("build/resources/main/Play/Levels/floor_0/map.png"));
+//			level.setMapImage(new Image("build/resources/main/Play/Levels/floor_0/map.png"));
 			staticImageEntities.add(new StaticImageEntity(new Image("build/resources/main/images/outlier.png")));
 			staticImageEntities.get(0).setPosition(0,0);
 			staticImageEntities.get(0).setVelocity(new Vector2f(100,100));
@@ -140,7 +140,7 @@ public class RPG {
 	public void getImages(ArrayList<Image> images, ArrayList<Vector2f> vectors) {
 		images.clear();
 		vectors.clear();
-		images.add(level.getMapImage());
+//		images.add(level.getMapImage());
 		vectors.add(level.getPosition());
 		for (StaticImageEntity entity:
 				staticImageEntities) {

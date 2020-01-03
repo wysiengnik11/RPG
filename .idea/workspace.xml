@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb3d9698-da2b-4db3-b977-7a65bdccc6a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ded.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/dying.png" afterDir="false" />
+    <list default="true" id="fb3d9698-da2b-4db3-b977-7a65bdccc6a3" name="Default Changelist" comment="Added simple death animations handling for mob class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/AStarTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/desert.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/desert.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/orthogonal-outside.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -12,14 +15,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Level.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Mob.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/RPG.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/RPG.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/images/left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/images/right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/right2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Mob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/RPG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/RPG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/right2.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +122,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -159,7 +162,20 @@
       <command value="gradle javadoc" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameBasic">
+  <component name="RunManager" selected="Application.AStarTest">
+    <configuration name="AStarTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tests_and_whatnot.AStarTest" />
+      <module name="RPG.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests_and_whatnot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameBasic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="Path" value="D:\RPG\build\resources\main\_natives;D:\Java\jdk-11.0.5;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Git\cmd;C:\Users\wysie\AppData\Local\Microsoft\WindowsApps" />
@@ -221,26 +237,6 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="StaticImageEntityTest.setImage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;rpg.model.StaticImageEntityTest.setImage&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <module name="RPG.main" />
       <option name="VM_PARAMETERS" />
@@ -292,16 +288,16 @@
       <item itemvalue="Application.ShapeTesting" />
       <item itemvalue="Application.VectorTesting" />
       <item itemvalue="Application.GameBasic" />
-      <item itemvalue="Gradle.StaticImageEntityTest.setImage" />
       <item itemvalue="Gradle.RPG [build]" />
+      <item itemvalue="Application.AStarTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AStarTest" />
         <item itemvalue="Application.GameBasic" />
         <item itemvalue="Gradle.RPG [build]" />
         <item itemvalue="Application.VectorTesting" />
         <item itemvalue="Application.ShapeTesting" />
-        <item itemvalue="Gradle.StaticImageEntityTest.setImage" />
       </list>
     </recent_temporary>
   </component>
@@ -426,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577899223251</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added simple death animations handling for mob class">
+      <created>1577908294156</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1577908294156</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -444,7 +447,8 @@
     <MESSAGE value="Natives still a problem, but got a static image entity to move across the screen" />
     <MESSAGE value="Added an animated image and moved it across the screen" />
     <MESSAGE value="Added mob class functionality and added an animated mob entity moving on a square to check if mob class can handle stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mob class functionality and added an animated mob entity moving on a square to check if mob class can handle stuff" />
+    <MESSAGE value="Added simple death animations handling for mob class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added simple death animations handling for mob class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="177" key="#Game" timestamp="1577093242337">
@@ -519,10 +523,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577714753524" />
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1577906717379">
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578049362088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577906717379" />
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578049362088" />
     <state x="690" y="299" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576940610080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -559,10 +563,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577123460585" />
-    <state x="783" y="110" key="CommitChangelistDialog2" timestamp="1577899219209">
+    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1577918806189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="783" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577899219209" />
+    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577918806189" />
     <state x="694" y="280" key="EnvironmentVariablesDialog" timestamp="1577897591845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -579,26 +583,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="224" key="Github.UntrackedFilesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577139071645" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1577908218986">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578051435340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577908218986" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1577908218985">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578051435340" />
+    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578051435340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577908218985" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1577908218985">
+    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578051435340" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578051435340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895951" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577908218985" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1577908218985">
+    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578051435340" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578051435340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577908218985" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578051435340" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1577530320379">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -619,14 +623,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="254" height="198" key="RunAnythingAction_Filter_Popup/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1576585351888" />
-    <state x="415" y="137" key="SettingsEditor" timestamp="1577717442860">
+    <state x="415" y="137" key="SettingsEditor" timestamp="1577919001916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="415" y="137" key="SettingsEditor/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577717442860" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577899233121">
+    <state x="415" y="137" key="SettingsEditor/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577919001916" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577908305844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577899233121" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577908305844" />
     <state x="551" y="267" key="caller.chooser.dialog" timestamp="1577123468172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -635,10 +639,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="776" y="301" key="chooseDestDirectoryDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1576940607365" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1577880587424">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1578046057010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577880587424" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578046057010" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577538285018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

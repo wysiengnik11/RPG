@@ -1,6 +1,7 @@
 package rpg.model;
 
 import org.newdawn.slick.geom.Vector2f;
+import org.newdawn.slick.util.pathfinding.Mover;
 
 class Entity extends Colliding {
 
