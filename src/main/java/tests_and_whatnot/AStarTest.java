@@ -14,12 +14,6 @@ public class AStarTest {
 
 	private static final int MAX_PATH_LENGTH = 100;
 
-	private static final int START_X = 1;
-	private static final int START_Y = 1;
-
-	private static final int GOAL_X = 1;
-	private static final int GOAL_Y = 6;
-
 	public static void main(String[] args) {
 
 		File JGLLib = new File("build/resources/main/_natives");
@@ -28,7 +22,7 @@ public class AStarTest {
 		SimpleMap map = new SimpleMap();
 
 		AStarPathFinder pathFinder = new AStarPathFinder(map, MAX_PATH_LENGTH, false);
-		Path path = pathFinder.findPath(null, START_X, START_Y, GOAL_X, GOAL_Y);
+		Path path = pathFinder.findPath(null, 1, 1, 1, 6);
 
 		int length = path.getLength();
 		System.out.println("Found path of length: " + length + ".");
@@ -42,18 +36,20 @@ public class AStarTest {
 			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
 			a.setShowFPS(false);
 			a.start();
+			a = new AppGameContainer(new TestEngine("test",1));
+			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
+			a.setShowFPS(false);
+			a.start();
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }
 
 class TestEngine extends BasicGame {
 
 	private int testCase;
-	private TileBasedMap map;
+
 	/**
 	 * Create a new basic game
 	 *
@@ -66,18 +62,13 @@ class TestEngine extends BasicGame {
 
 	@Override
 	public void init(GameContainer container) throws SlickException {
+		TileBasedMap map;
 		if(testCase == 0){
 			map = new LayerBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"),0);
 		}
 		else {
 			map = new PropertyBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"), "Blocking");
 		}
-	}
-
-	@Override
-	public void update(GameContainer container, int delta) throws SlickException {
-
-//		System.out.println(map.test());
 
 		AStarPathFinder pathFinder = new AStarPathFinder(map, 100, false);
 		Path path = pathFinder.findPath(null, 8, 14, 8, 20);
@@ -89,7 +80,13 @@ class TestEngine extends BasicGame {
 			System.out.println("Move to: " + path.getX(i) + "," + path.getY(i) + ".");
 		}
 
+		container.setForceExit(false);
 		container.exit();
+	}
+
+	@Override
+	public void update(GameContainer container, int delta) throws SlickException {
+
 	}
 
 	@Override
