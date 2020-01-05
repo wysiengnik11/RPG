@@ -9,7 +9,9 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 import java.io.File;
 
-
+/**
+ * Three tests of path finding with different maps and blocking systems
+ */
 class AStarTest {
 
 	private static final int MAX_PATH_LENGTH = 100;
@@ -36,9 +38,12 @@ class AStarTest {
 			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
 			a.setShowFPS(false);
 			a.start();
-			// this seems broken now
-			// map is probably not working correctly
-			a = new AppGameContainer(new TestEngine("test",1));
+		} catch (SlickException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			AppGameContainer a = new AppGameContainer(new TestEngine("test",1));
 			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
 			a.setShowFPS(false);
 			a.start();
@@ -66,7 +71,8 @@ class TestEngine extends BasicGame {
 	public void init(GameContainer container) throws SlickException {
 		TileBasedMap map;
 		if(testCase == 0){
-			map = new LayerBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"),0);
+			map = new LayerBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"),1);
+			System.out.println("Height in tiles: "+map.getHeightInTiles());
 		}
 		else {
 			map = new PropertyBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"), "Blocking");
@@ -97,6 +103,9 @@ class TestEngine extends BasicGame {
 	}
 }
 
+/**
+ * Simple map with an array of blocked tiles
+ */
 class SimpleMap implements TileBasedMap {
 	private static final int WIDTH = 10;
 	private static final int HEIGHT = 10;
@@ -140,6 +149,10 @@ class SimpleMap implements TileBasedMap {
 
 }
 
+/**
+ * A map basing blocked tile detection on TileD maps Layer feature
+ * Map would have a layer specifying which tiles are blocked
+ */
 class LayerBasedMap implements TileBasedMap {
 
 	private TiledMap map;
@@ -147,7 +160,6 @@ class LayerBasedMap implements TileBasedMap {
 
 	public LayerBasedMap(TiledMap map, int blockingLayerId) {
 		this.map = map;
-		System.out.println(map.getLayerCount());
 		this.blockingLayerId = blockingLayerId;
 	}
 
@@ -179,6 +191,10 @@ class LayerBasedMap implements TileBasedMap {
 
 }
 
+/**
+ * A map basing blocked tile detection on TileD maps properties feature
+ * The map would have a property for tiles that would be true for blocking tiles
+ */
 class PropertyBasedMap implements TileBasedMap {
 
 	private TiledMap map;

@@ -34,7 +34,7 @@ class Level extends Colliding {
 	 * @param ref Reference path to TileD map file
 	 * @param position Vector2f position
 	 */
-	public Level(String ref, Vector2f position) throws SlickException {
+	public Level(String ref, int[] position) throws SlickException {
 		this(ref);
 		setPosition(position);
 	}
@@ -46,11 +46,11 @@ class Level extends Colliding {
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 */
-	public Level(String ref, float x, float y) throws SlickException {
+	public Level(String ref, int x, int y) throws SlickException {
 		this(ref);
 		this.setPosition(x,y);
 	}
-	public Level(Map map, float x, float y) {
+	public Level(Map map, int x, int y) {
 		this.map = map;
 		this.setPosition(x,y);
 	}

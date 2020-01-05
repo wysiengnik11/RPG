@@ -15,8 +15,10 @@ import java.io.ObjectInputStream;
  * @since 2019-12-23
  */
 class Colliding extends Positionable {
+
 	/** Bounding box shape used for detection */
 	private Shape boundingBox = null;
+
 	/**
 	 * Default constructor
 	 * Does nothing for Colliding, default Positionable()
@@ -40,7 +42,7 @@ class Colliding extends Positionable {
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 */
-	public Colliding(float x, float y) {
+	public Colliding(int x, int y) {
 		super(x,y);
 	}
 	/**
@@ -48,7 +50,7 @@ class Colliding extends Positionable {
 	 *
 	 * @param position Vector2f position
 	 */
-	public Colliding(Vector2f position) {
+	public Colliding(int[] position) {
 		super(position);
 	}
 	/**
@@ -58,7 +60,7 @@ class Colliding extends Positionable {
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 */
-	public Colliding(Shape boundingBox, float x, float y) {
+	public Colliding(Shape boundingBox, int x, int y) {
 		super(x,y);
 		this.setBoundingBox(boundingBox);
 	}
@@ -68,7 +70,7 @@ class Colliding extends Positionable {
 	 * @param boundingBox Shape used for collision detection
 	 * @param position Vector2f position
 	 */
-	public Colliding(Shape boundingBox, Vector2f position) {
+	public Colliding(Shape boundingBox, int[] position) {
 		super(position);
 		this.setBoundingBox(boundingBox);
 	}
@@ -96,7 +98,7 @@ class Colliding extends Positionable {
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 */
-	public Colliding(String shapePath, float x ,float y) {
+	public Colliding(String shapePath, int x ,int y) {
 		super(x,y);
 		try {
 			FileInputStream inp = new FileInputStream(shapePath);
@@ -114,13 +116,13 @@ class Colliding extends Positionable {
 	 * @param shapePath Path to the shape file (Shape is serializable)
 	 * @param position Vector2f position
 	 */
-	public Colliding(String shapePath, Vector2f position) {
+	public Colliding(String shapePath, int[] position) {
 		super(position);
 		try {
 			FileInputStream inp = new FileInputStream(shapePath);
 			ObjectInputStream save = new ObjectInputStream(inp);
 			boundingBox = (Shape) save.readObject();
-			boundingBox.setLocation(position);
+			boundingBox.setLocation(position[0],position[1]);
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -212,7 +214,7 @@ class Colliding extends Positionable {
 	 * @see Positionable
 	 */
 	@Override
-	public void setX(float x) {
+	public void setX(int x) {
 		super.setX(x);
 		if(hasBoundingBox())
 			boundingBox.setX(x);
@@ -221,33 +223,30 @@ class Colliding extends Positionable {
 	 * @see Positionable
 	 */
 	@Override
-	public void setY(float y) {
+	public void setY(int y) {
 		super.setY(y);
 		if(hasBoundingBox())
 			boundingBox.setY(y);
 	}
 	/**
-	 * Sets position
-	 *
 	 * @see Positionable
 	 */
 	@Override
-	public void setPosition(float x, float y) {
+	public void setPosition(int x, int y) {
 		super.setPosition(x,y);
 		if(hasBoundingBox())
 			boundingBox.setLocation(x,y);
 	}
 	/**
-	 * Sets position
-	 *
 	 * @see Positionable
-	 * @param position Vector2f position
 	 */
 	@Override
-	public void setPosition(Vector2f position) {
-		super.setPosition(position);
-		if(hasBoundingBox())
-			boundingBox.setLocation(position);
+	public void setPosition(int[] position) {
+		if(position.length == 2) {
+			super.setPosition(position);
+			if (hasBoundingBox())
+				boundingBox.setLocation(position[0],position[1]);
+		}
 	}
 	/**
 	 * Checks if the bounding box Shape is present

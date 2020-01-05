@@ -48,6 +48,7 @@ public class GameBasic extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
+		/*
 		// Get and check images and vectors from the model
 		ArrayList<Image> images = new ArrayList<>();
 		ArrayList<Vector2f> vectors = new ArrayList<>();
@@ -76,6 +77,7 @@ public class GameBasic extends BasicGame {
 			anim.draw(v.x,v.y);
 		}
 		g.drawString(model.getString(),10,10);
+		*/
 	}
 
 	public static void main(String[] args) {

@@ -1,11 +1,11 @@
-package rpg.model;
+package rpgV2.model;
 
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
-class Map extends TiledMap implements TileBasedMap {
+class Map extends TiledMap {
 
 	/** Id of the layer used for path finding */
 	private int blockingLayerID;
@@ -19,7 +19,7 @@ class Map extends TiledMap implements TileBasedMap {
 	 *
 	 * @see TiledMap
 	 */
-	public Map(String ref) throws SlickException {
+	Map(String ref) throws SlickException {
 		super(ref);
 		for(int i = this.getLayerCount() - 1; i >= 0; --i ) {
 			if(this.getLayerProperty(i,"Blocking","false").equals("true")) {
@@ -30,40 +30,20 @@ class Map extends TiledMap implements TileBasedMap {
 		tileOffset = new int[]{tileWidth, tileHeight};
 	}
 
-	public int getXOffset() {
+	int getBlockingLayerID() {
+		return blockingLayerID;
+	}
+
+	int getXOffset() {
 		return tileOffset[0];
 	}
 
-	public int getYOffset() {
+	int getYOffset() {
 		return tileOffset[1];
 	}
 
-	public int[] getTileOffset() {
+	int[] getTileOffset() {
 		return tileOffset;
 	}
 
-	@Override
-	public int getWidthInTiles() {
-		return getWidth();
-	}
-
-	@Override
-	public int getHeightInTiles() {
-		return getHeight();
-	}
-
-	@Override
-	public void pathFinderVisited(int x, int y) {
-
-	}
-
-	@Override
-	public boolean blocked(PathFindingContext context, int tx, int ty) {
-		return getTileId(tx,ty,blockingLayerID) != 0;
-	}
-
-	@Override
-	public float getCost(PathFindingContext context, int tx, int ty) {
-		return 1.f;
-	}
 }

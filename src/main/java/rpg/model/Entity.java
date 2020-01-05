@@ -14,6 +14,7 @@ class Entity extends Colliding {
 	public Entity(Vector2f velocity) {
 		this.velocity = velocity;
 	}
+	/*
 	public Entity(Vector2f velocity, Vector2f position) {
 		super(position);
 		this.velocity = velocity;
@@ -27,14 +28,19 @@ class Entity extends Colliding {
 		this.velocity.set(xVel,yVel);
 	}
 
+	 */
+
 	/**
 	 * Method for updating position of the object according to it's velocity and time since last update
 	 */
 	public void update(int delta) {
+		/*
 		Vector2f posDelta = velocity.copy();
 		posDelta.x *= delta/1000.f;
 		posDelta.y *= delta/1000.f;
 		setPosition(getPosition().add(posDelta));
+
+		 */
 	}
 
 	public Vector2f getVelocity() {

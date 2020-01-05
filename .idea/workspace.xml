@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3d9698-da2b-4db3-b977-7a65bdccc6a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/NavMeshTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/AnimatedItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/BlockingEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/DamagingEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Level.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Mob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/PathFindingMob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Rpg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/SimpleItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,9 +25,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/GameBasic.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/GameBasic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Colliding.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Colliding.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Positionable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/Positionable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/rpg/model/RPG.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/rpg/model/RPG.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/GameBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/GameBasic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Colliding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Colliding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/Positionable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/Positionable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpg/model/RPG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpg/model/RPG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/AStarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/AStarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/NavMeshTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests_and_whatnot/NavMeshTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/desert.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/desert.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,15 +150,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="rpg.model" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="rpg.model" />
-      <recent name="rpg" />
-      <recent name="tests_and_whatnot" />
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\RPG\src\test\resources" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
@@ -141,6 +159,18 @@
       <recent name="D:\RPG\build\resources\main\images" />
       <recent name="D:\RPG" />
       <recent name="D:\RPG\.gradle" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="rpg.model" />
+      <recent name="rpg" />
+      <recent name="tests_and_whatnot" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="rpgV2.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RPG\src\test\resources" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -278,9 +308,9 @@
     <list>
       <item itemvalue="Application.VectorTesting" />
       <item itemvalue="Application.GameBasic" />
-      <item itemvalue="Gradle.RPG [build]" />
       <item itemvalue="Application.AStarTest" />
       <item itemvalue="Application.NavMeshTest" />
+      <item itemvalue="Gradle.RPG [build]" />
     </list>
     <recent_temporary>
       <list>
@@ -448,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578057287097</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Exploring nav meshes">
+      <created>1578082930293</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1578082930293</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -470,7 +507,8 @@
     <MESSAGE value="Tried to do something with path finding but TiledMap doesn't seem to cooperate" />
     <MESSAGE value="Got it to work, this is the example given here:&#10;https://stackoverflow.com/questions/9742039/a-pathfinding-java-slick2d-library" />
     <MESSAGE value="Shuffled some things in Level and Map to facilitate TieldMap and TiledBasedMap path finding a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shuffled some things in Level and Map to facilitate TieldMap and TiledBasedMap path finding a bit" />
+    <MESSAGE value="Exploring nav meshes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exploring nav meshes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="177" key="#Game" timestamp="1577093242337">
@@ -541,14 +579,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577536448271" />
-    <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577714753524">
+    <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578220470760">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577714753524" />
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578080634266">
+    <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578220470760" />
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578246428938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578080634266" />
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578246428938" />
     <state x="690" y="299" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576940610080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -585,10 +623,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577123460585" />
-    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1578057286106">
+    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1578082928396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578057286106" />
+    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082928396" />
     <state x="694" y="280" key="EnvironmentVariablesDialog" timestamp="1577897591845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -605,42 +643,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="224" key="Github.UntrackedFilesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577139071645" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578082817948">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578229823662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817948" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578082817948">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578229823662" />
+    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578229823662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817948" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578082817947">
+    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578229823662" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578229823662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895951" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817947" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578082817948">
+    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578229823662" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578229823662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578082817948" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1577530320379">
+    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578229823662" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1578219546817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577530320379" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1577530320378">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578219546817" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1578219546817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577530320378" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1577530320378">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578219546817" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1578219546817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577530320378" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1577530320379">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578219546817" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1578219546817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577530320379" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578219546817" />
     <state width="254" height="198" key="RunAnythingAction_Filter_Popup" timestamp="1576585351888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -649,10 +687,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="415" y="137" key="SettingsEditor/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577919001916" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577908305844">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578091131260">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577908305844" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578091131260" />
     <state x="551" y="267" key="caller.chooser.dialog" timestamp="1577123468172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -661,10 +699,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="776" y="301" key="chooseDestDirectoryDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1576940607365" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1578046057010">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1578219334634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578046057010" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578219334634" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577538285018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -685,18 +723,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577133086917" />
-    <state x="666" y="147" key="refactoring.ChangeSignatureDialog" timestamp="1577455912454">
+    <state x="666" y="147" key="refactoring.ChangeSignatureDialog" timestamp="1578231364562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="147" key="refactoring.ChangeSignatureDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577455912454" />
+    <state x="666" y="147" key="refactoring.ChangeSignatureDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578231364562" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1577625986913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577625986913" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577548414280">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578235259361">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577548414280" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578235259361" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RPG$CollidingTest.ic" NAME="CollidingTest Coverage Results" MODIFIED="1577458480088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

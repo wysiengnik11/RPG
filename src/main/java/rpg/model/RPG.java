@@ -137,7 +137,8 @@ public class RPG {
 	/**
 	 * Function used by controller to get images to draw
 	 */
-	public void getImages(ArrayList<Image> images, ArrayList<Vector2f> vectors) {
+	public void getImages(ArrayList<Image> images, ArrayList<Integer[]> vectors) {
+		/*
 		images.clear();
 		vectors.clear();
 //		images.add(level.getMapImage());
@@ -147,12 +148,15 @@ public class RPG {
 			images.add(entity.getImage());
 			vectors.add(entity.getPosition());
 		}
+
+		 */
 	}
 
 	/**
 	 * Function used by controller to get animations to draw
 	 */
 	public void getAnimations(ArrayList<Animation> animations, ArrayList<Vector2f> vectors) {
+		/*
 		animations.clear();
 		vectors.clear();
 		for (AnimatedEntity entity:
@@ -169,6 +173,8 @@ public class RPG {
 				vectors.add(m.getPosition());
 			}
 		}
+
+		 */
 	}
 
 	public String getString() {

@@ -9,6 +9,9 @@ import org.newdawn.slick.util.pathfinding.navmesh.NavPath;
 
 import java.io.File;
 
+/**
+ * Test cases for nav meshes built from maps in AStarTest
+ */
 class NavMeshTest extends BasicGame {
 
 	/**
@@ -22,6 +25,7 @@ class NavMeshTest extends BasicGame {
 
 	@Override
 	public void init(GameContainer container) throws SlickException {
+
 		TileBasedMap map = new SimpleMap();
 		NavMeshBuilder builder = new NavMeshBuilder();
 		NavMesh mesh = builder.build(map);
