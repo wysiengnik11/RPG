@@ -4,8 +4,8 @@ import org.newdawn.slick.SlickException;
 
 public class Sword extends Weapon {
 
-	Sword(int damage) {
-		super();
+	Sword(String ref, int damage) throws SlickException {
+		super(ref);
 		properties.put("Sword", true);
 		properties.put("Damage", damage);
 	}

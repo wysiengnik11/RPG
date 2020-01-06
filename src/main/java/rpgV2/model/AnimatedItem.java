@@ -1,6 +1,7 @@
 package rpgV2.model;
 
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.Renderable;
 
 class AnimatedItem extends Item {
 
@@ -14,6 +15,11 @@ class AnimatedItem extends Item {
 	@Override
 	void terminate(Player player) {
 		player.removeItem(this);
+	}
+
+	@Override
+	Renderable getRenderable() {
+		return null;
 	}
 
 }

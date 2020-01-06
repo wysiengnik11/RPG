@@ -1,11 +1,13 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
+
 import java.io.Serializable;
 import java.util.Properties;
 
 abstract class Item implements Serializable {
 
-	Properties properties;
+	Properties properties = new Properties();
 
 	void pickUp(Tile tile, Player player) {
 		player.addItem(this);
@@ -15,4 +17,5 @@ abstract class Item implements Serializable {
 	abstract void terminate(Tile tile);
 	abstract void terminate(Player player);
 
+	abstract Renderable getRenderable();
 }

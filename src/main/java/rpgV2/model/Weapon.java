@@ -7,7 +7,8 @@ abstract class Weapon extends SimpleItem {
 
 	protected Animation attackAnimation;
 
-	Weapon() {
+	Weapon(String ref) throws SlickException {
+		super(ref);
 		properties.put("Equipable", true);
 		properties.put("Weapon", true);
 	}

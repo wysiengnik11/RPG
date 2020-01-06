@@ -1,5 +1,6 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
 import org.newdawn.slick.SlickException;
 
 import java.io.Serializable;
@@ -139,6 +140,26 @@ class Tile implements Serializable {
 		if(direction != UP && direction != RIGHT && direction != DOWN && direction != LEFT)
 			throw new SlickException("No direction " + direction + " Check the game code.");
 		return connected[direction];
+	}
+
+	public ArrayList<Renderable> getRenderables() {
+		ArrayList<Renderable> ret = new ArrayList<>();
+		for (Item i:
+		     items) {
+			if((boolean) i.properties.get("Renderable"))
+				ret.add(i.getRenderable());
+		}
+		return ret;
+	}
+
+	public ArrayList<int[]> getRenderablesPos() {
+		ArrayList<int[]> ret = new ArrayList<>();
+		for (Item i:
+		     items) {
+			if((boolean) i.properties.get("Renderable"))
+				ret.add(new int[] {getX(), getY()});
+		}
+		return ret;
 	}
 }
 

@@ -5,6 +5,8 @@ import rpgV2.model.Rpg;
 import rpgV2.model.Settings;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Controller extends BasicGame {
 
@@ -33,7 +35,19 @@ public class Controller extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
-		model.getMap().render(0,0, 0, 0, model.settings.windowWidth, model.settings.windowHeight);
+//		model.getMap().render(0,0, 0, 0, model.settings.windowWidth, model.settings.windowHeight);
+
+//		model.getTestShape(g);
+
+		ArrayList<Renderable> rs = new ArrayList<>();
+		ArrayList<int[]> pos = new ArrayList<>();
+		model.getRenderable(rs,pos);
+		Iterator<int[]> i = pos.iterator();
+		for (Renderable r:
+		     rs) {
+			int[] p = i.next();
+			r.draw(p[0],p[1]);
+		}
 	}
 
 	public static void main(String[] args) {
@@ -44,6 +58,8 @@ public class Controller extends BasicGame {
 
 		Controller game = new Controller(title);
 		game.model.settings = Settings.importSettings();
+		game.model.settings.windowWidth = 1088;
+		game.model.settings.windowHeight = 800;
 
 		try {
 			AppGameContainer container = new AppGameContainer(game);

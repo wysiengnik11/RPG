@@ -1,6 +1,9 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.util.pathfinding.AStarPathFinder;
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
@@ -34,13 +37,13 @@ public class Level implements TileBasedMap {
 		pathFinder = new AStarPathFinder(this, settings.maxSearchDistance, false);
 	}
 
-	void loadTiles(String tilesRef) throws IOException {
+	void saveTiles(String tilesRef) throws IOException {
 		FileOutputStream out = new FileOutputStream(tilesRef);
 		ObjectOutputStream save = new ObjectOutputStream(out);
 		save.writeObject(tiles);
 	}
 
-	void saveTiles(String tilesRef) throws IOException, ClassNotFoundException {
+	void loadTiles(String tilesRef) throws IOException, ClassNotFoundException {
 		if (new File(tilesRef).exists()) {
 			FileInputStream in = new FileInputStream(tilesRef);
 			ObjectInputStream save = new ObjectInputStream(in);
@@ -80,5 +83,17 @@ public class Level implements TileBasedMap {
 	@Override
 	public float getCost(PathFindingContext context, int tx, int ty) {
 		return getTile(tx,ty).getMovementCost();
+	}
+
+	public void getTestShape(Graphics g) {
+		for (Tile t:
+		     tiles) {
+			Shape s = new Rectangle(
+					(t.getX() + 0.25f)*map.getTileWidth(),
+					(t.getY() + 0.25f)*map.getTileHeight(),
+					map.getTileWidth()/2.f,
+					map.getTileHeight()/2.f);
+			g.draw(s);
+		}
 	}
 }
