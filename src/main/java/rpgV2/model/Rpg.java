@@ -13,9 +13,11 @@ public class Rpg {
 	Tile playerTile = null;
 
 	public void init() throws SlickException {
-		level = new Level( settings.savePath + "/Level" + currentLevel + "/level" + currentLevel + ".tmx" , settings);
+//		level = new Level(settings.savePath + "Level" + currentLevel + "/level" + currentLevel + ".tmx",settings);
+		level = new Level("D:\\RPG\\src\\test\\resources\\desert.tmx",settings);
 		player = new Player();
 		playerTile = null;
+		settings.saveSettings();
 	}
 
 	public void update(int delta) {
@@ -25,5 +27,9 @@ public class Rpg {
 	public void movePlayer(int direction) throws SlickException {
 		playerTile.moveMob(playerTile.getConnected(direction));
 		playerTile = playerTile.getConnected(direction);
+	}
+
+	public Map getMap() {
+		return level.map;
 	}
 }

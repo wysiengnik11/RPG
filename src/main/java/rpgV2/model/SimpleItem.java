@@ -2,12 +2,18 @@ package rpgV2.model;
 
 import org.newdawn.slick.Image;
 
-public class SimpleItem extends Item {
+class SimpleItem extends Item {
 
-	Image image;
+	protected Image image;
 
 	@Override
-	void update(int delta, Tile tile, Level level) {
-
+	void terminate(Tile tile) {
+		tile.remove(this);
 	}
+
+	@Override
+	void terminate(Player player) {
+		player.removeItem(this);
+	}
+
 }

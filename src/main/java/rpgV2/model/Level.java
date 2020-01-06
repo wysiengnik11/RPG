@@ -5,6 +5,7 @@ import org.newdawn.slick.util.pathfinding.AStarPathFinder;
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class Level implements TileBasedMap {
@@ -13,8 +14,8 @@ public class Level implements TileBasedMap {
 	Map map;
 	ArrayList<Tile> tiles = new ArrayList<>();
 
-	Level(String ref, Settings settings) throws SlickException {
-		map = new Map(ref);
+	Level(String mapRef, Settings settings) throws SlickException {
+		map = new Map(mapRef);
 		for(int y = 0; y < map.getHeight(); ++y)
 			for(int x = 0; x < map.getWidth(); ++x) {
 				Tile tile = new Tile(x,y);
@@ -31,6 +32,20 @@ public class Level implements TileBasedMap {
 				tiles.add(tile);
 			}
 		pathFinder = new AStarPathFinder(this, settings.maxSearchDistance, false);
+	}
+
+	void loadTiles(String tilesRef) throws IOException {
+		FileOutputStream out = new FileOutputStream(tilesRef);
+		ObjectOutputStream save = new ObjectOutputStream(out);
+		save.writeObject(tiles);
+	}
+
+	void saveTiles(String tilesRef) throws IOException, ClassNotFoundException {
+		if (new File(tilesRef).exists()) {
+			FileInputStream in = new FileInputStream(tilesRef);
+			ObjectInputStream save = new ObjectInputStream(in);
+			tiles = (ArrayList<Tile>) save.readObject();
+		}
 	}
 
 	Tile getTile(int x, int y) {
@@ -55,9 +70,7 @@ public class Level implements TileBasedMap {
 	}
 
 	@Override
-	public void pathFinderVisited(int x, int y) {
-
-	}
+	public void pathFinderVisited(int x, int y) {}
 
 	@Override
 	public boolean blocked(PathFindingContext context, int tx, int ty) {

@@ -14,12 +14,16 @@ public class Settings implements Serializable {
 	/*-------------------------------------------------------------- Misc Settings  --------------------------------------------------------------*/
 	/*--------------------------------------------------------------------------------------------------------------------------------------------*/
 	/** Name of the settings save file */
-	public String saveName = "settings.sav";
+	public String saveName = "settings.save";
 	/**
 	 * Path where the settings save file is located
 	 * When string is empty the save location is in the "RPG" folder (probably)
 	 */
-	public String savePath = "";
+	public String savePath = "D:/RPG/";
+	/**
+	 * A flag used to display a card during initial loading notifying of a save import fail
+	 */
+	public boolean failedToImport = true;
 	/*--------------------------------------------------------------------------------------------------------------------------------------------*/
 	/*------------------------------------------------------------- Window Settings  -------------------------------------------------------------*/
 	/*--------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -65,28 +69,44 @@ public class Settings implements Serializable {
 	 */
 	public void saveSettings() {
 		try {
-			FileOutputStream out = new FileOutputStream(savePath + saveName);
+			File file = new File(savePath);
+			file = new File(file, "save");
+			if(!file.exists())
+				file.mkdir();
+			file = new File(file, saveName);
+
+			FileOutputStream out = new FileOutputStream(file);
 			ObjectOutputStream save = new ObjectOutputStream(out);
 			save.writeObject(this);
+			save.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * Static method for importing settings from a file into a provided settings object
+	 * Static method for importing settings from a file
+	 * If the import fails the return object is initialized to default
 	 *
-	 * @param settings Settings object to be replaced by settings imported from the file
+	 * @return Settings object
 	 */
-	public static void importSettings(Settings settings) {
+	public static Settings importSettings() {
+		Settings settings = new Settings();
 		try {
-			if (new File(settings.savePath + settings.saveName).exists()) {
-				FileInputStream in = new FileInputStream(settings.savePath + settings.saveName);
+			File file = new File(settings.savePath);
+			file = new File(file, "save");
+			file = new File(file, settings.saveName);
+
+			if(file.exists()) {
+				FileInputStream in = new FileInputStream(file);
 				ObjectInputStream save = new ObjectInputStream(in);
 				settings = (Settings) save.readObject();
+				settings.failedToImport = false;
+				save.close();
 			}
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+		return settings;
 	}
 }

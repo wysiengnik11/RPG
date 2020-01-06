@@ -2,12 +2,18 @@ package rpgV2.model;
 
 import org.newdawn.slick.Animation;
 
-public class AnimatedItem extends Item {
+class AnimatedItem extends Item {
 
-	Animation animation;
+	protected Animation animation;
 
 	@Override
-	void update(int delta, Tile tile, Level level) {
-
+	void terminate(Tile tile) {
+		tile.remove(this);
 	}
+
+	@Override
+	void terminate(Player player) {
+		player.removeItem(this);
+	}
+
 }

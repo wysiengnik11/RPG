@@ -2,13 +2,14 @@ package rpgV2.model;
 
 import org.newdawn.slick.SlickException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-class Tile {
+class Tile implements Serializable {
 
-	private ArrayList<Item> items;
-	private ArrayList<Entity> entities;
-	private Mob mob;
+	private ArrayList<Item> items = new ArrayList<>();
+	private ArrayList<Entity> entities = new ArrayList<>();
+	private Mob mob = null;
 	private boolean passable = true;
 	private boolean blocked;
 	private float movementCost;
@@ -72,10 +73,6 @@ class Tile {
 	}
 
 	void update(int delta, Level level) {
-		for (Item i:
-				items) {
-			i.update(delta, this, level);
-		}
 		for (Entity e:
 				entities) {
 			e.update(delta, this, level);

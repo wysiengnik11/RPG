@@ -10,6 +10,7 @@ abstract class Mob {
 	protected boolean moving = false;
 	/** Time elapsed since moving started */
 	protected int timeMoving = 0;
+	protected int facing = Tile.DOWN;
 
 	void takeDamage(int damage) {
 		health -= damage;

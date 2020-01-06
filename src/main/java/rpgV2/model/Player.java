@@ -4,8 +4,12 @@ import java.util.ArrayList;
 
 public class Player extends Mob {
 
-	private ArrayList<Item> items;
+	private ArrayList<Item> items = new ArrayList<>();
 	private int equippedItemID;
+
+	protected void addItem(Item item) {
+		items.add(item);
+	}
 
 	@Override
 	void update(int delta, Tile tile, Level level) {
@@ -22,4 +26,7 @@ public class Player extends Mob {
 		//TODO game over
 	}
 
+	void removeItem(Item item) {
+		items.remove(item);
+	}
 }

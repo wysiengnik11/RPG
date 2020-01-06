@@ -5,7 +5,7 @@ import org.newdawn.slick.tiled.TiledMap;
 import org.newdawn.slick.util.pathfinding.PathFindingContext;
 import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
-class Map extends TiledMap {
+public class Map extends TiledMap {
 
 	/** Id of the layer used for path finding */
 	private int blockingLayerID;

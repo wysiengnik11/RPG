@@ -35,7 +35,7 @@ class AStarTest {
 
 		try {
 			AppGameContainer a = new AppGameContainer(new TestEngine("test",0));
-			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
+			a.setDisplayMode(640, 640, false);
 			a.setShowFPS(false);
 			a.start();
 		} catch (SlickException e) {
@@ -44,7 +44,7 @@ class AStarTest {
 
 		try {
 			AppGameContainer a = new AppGameContainer(new TestEngine("test",1));
-			a.setDisplayMode(Window.WIDTH, Window.HEIGHT, false);
+			a.setDisplayMode(640, 640, false);
 			a.setShowFPS(false);
 			a.start();
 		} catch (SlickException e) {
@@ -56,6 +56,8 @@ class AStarTest {
 class TestEngine extends BasicGame {
 
 	private int testCase;
+	private int delta = 0;
+	TiledMap map;
 
 	/**
 	 * Create a new basic game
@@ -69,13 +71,13 @@ class TestEngine extends BasicGame {
 
 	@Override
 	public void init(GameContainer container) throws SlickException {
+		this.map = new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx");
 		TileBasedMap map;
 		if(testCase == 0){
-			map = new LayerBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"),1);
-			System.out.println("Height in tiles: "+map.getHeightInTiles());
+			map = new LayerBasedMap(this.map,1);
 		}
 		else {
-			map = new PropertyBasedMap(new TiledMap("D:\\RPG\\src\\test\\resources\\desert.tmx"), "Blocking");
+			map = new PropertyBasedMap(this.map , "Blocking");
 		}
 
 		AStarPathFinder pathFinder = new AStarPathFinder(map, 100, false);
@@ -88,18 +90,21 @@ class TestEngine extends BasicGame {
 			System.out.println("Move to: " + path.getX(i) + "," + path.getY(i) + ".");
 		}
 
-		container.setForceExit(false);
-		container.exit();
 	}
 
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException {
-
+		if(this.delta > 2000){
+			container.setForceExit(false);
+			container.exit();
+		}
+		this.delta += delta;
 	}
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
-
+		// this showed me blocking layer has to be underneath ground layer for the map to draw properly
+		map.render(0,0);
 	}
 }
 

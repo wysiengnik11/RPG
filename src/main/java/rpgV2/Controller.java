@@ -33,7 +33,7 @@ public class Controller extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
-
+		model.getMap().render(0,0, 0, 0, model.settings.windowWidth, model.settings.windowHeight);
 	}
 
 	public static void main(String[] args) {
@@ -43,8 +43,7 @@ public class Controller extends BasicGame {
 		System.setProperty("org.lwjgl.librarypath", JGLLib.getAbsolutePath());
 
 		Controller game = new Controller(title);
-		Settings.importSettings(game.model.settings);
-		game.model.settings.windowHeight = 640;
+		game.model.settings = Settings.importSettings();
 
 		try {
 			AppGameContainer container = new AppGameContainer(game);

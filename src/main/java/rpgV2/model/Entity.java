@@ -1,9 +1,11 @@
 package rpgV2.model;
 
+import java.io.Serializable;
+
 /**
  * Abstract class for entities that take actions when on a tile
  */
-abstract class Entity {
+abstract class Entity implements Serializable {
 
 	/**
 	 * Update method for determining behavior
