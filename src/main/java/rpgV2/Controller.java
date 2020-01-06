@@ -35,9 +35,9 @@ public class Controller extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
-//		model.getMap().render(0,0, 0, 0, model.settings.windowWidth, model.settings.windowHeight);
+		model.getMap().render(0,0, 0, 0, model.settings.windowWidth, model.settings.windowHeight);
 
-//		model.getTestShape(g);
+		model.getTestShape(g);
 
 		ArrayList<Renderable> rs = new ArrayList<>();
 		ArrayList<int[]> pos = new ArrayList<>();
@@ -46,7 +46,7 @@ public class Controller extends BasicGame {
 		for (Renderable r:
 		     rs) {
 			int[] p = i.next();
-			r.draw(p[0],p[1]);
+			r.draw(p[0]*model.getMap().getXOffset(),p[1]*model.getMap().getYOffset());
 		}
 	}
 

@@ -34,11 +34,11 @@ public class Map extends TiledMap {
 		return blockingLayerID;
 	}
 
-	int getXOffset() {
+	public int getXOffset() {
 		return tileOffset[0];
 	}
 
-	int getYOffset() {
+	public int getYOffset() {
 		return tileOffset[1];
 	}
 
