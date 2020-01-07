@@ -1,8 +1,10 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
+
 import java.util.Properties;
 
-public class NonpathingInteractableNpc extends Mob implements Interactable {
+class NonpathingInteractableNpc extends Mob implements Interactable {
 
 	protected String name;
 	protected Properties dialog;
@@ -30,5 +32,10 @@ public class NonpathingInteractableNpc extends Mob implements Interactable {
 	@Override
 	void terminate(Tile tile) {
 
+	}
+
+	@Override
+	public Renderable getRenderable() {
+		return null;
 	}
 }

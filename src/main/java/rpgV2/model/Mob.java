@@ -1,7 +1,12 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
+
+import java.util.Properties;
+
 abstract class Mob {
 
+	public Properties properties = new Properties();
 	/***/
 	protected int health;
 	/** Speed at which the mob moves between tiles in tiles per second */
@@ -32,4 +37,6 @@ abstract class Mob {
 		moving = true;
 		currentTile.moveMob(nextTile);
 	}
+
+	public abstract Renderable getRenderable();
 }

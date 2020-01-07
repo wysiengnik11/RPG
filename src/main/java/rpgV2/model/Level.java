@@ -85,6 +85,11 @@ public class Level implements TileBasedMap {
 		return getTile(tx,ty).getMovementCost();
 	}
 
+	/**
+	 * Test function to see if tiles are created properly
+	 * TODO delete this function, or move this to a test class
+	 * @param g Slick2d Graphics object drawing the rectangles
+	 */
 	public void getTestShape(Graphics g) {
 		for (Tile t:
 		     tiles) {

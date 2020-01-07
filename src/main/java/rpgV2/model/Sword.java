@@ -12,6 +12,7 @@ public class Sword extends Weapon {
 
 	@Override
 	void attack(Tile tile) throws SlickException {
+		attacking =true;
 		Tile attacked = tile.getConnected(tile.getMob().facing);
 		if(attacked.getMob() != null)
 			attacked.getMob().takeDamage((int) properties.get("Damage"));

@@ -22,7 +22,7 @@ public class Rpg {
 		level.getTile(5,5).addItem(new SimpleItem("D:\\RPG\\build\\resources\\main\\images\\ded.png"));
 		player = new Player();
 		playerTile = null;
-		settings.saveSettings();
+//		settings.saveSettings();
 	}
 
 	public void update(int delta) {
@@ -38,14 +38,14 @@ public class Rpg {
 		return level.map;
 	}
 
-	public void getTestShape(Graphics g){level.getTestShape(g);}
-
 	public void getRenderable(ArrayList<Renderable> rs, ArrayList<int[]> pos) {
 		for (Tile t:
 		     level.tiles) {
+			rs.add(null);
 			rs.addAll(t.getRenderables());
-			pos.addAll(t.getRenderablesPos());
+			pos.add(new int[] {t.getX(),t.getY()});
 		}
-
 	}
+
+	public void getTestShape(Graphics g){level.getTestShape(g);}
 }

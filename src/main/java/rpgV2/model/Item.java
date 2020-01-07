@@ -5,7 +5,7 @@ import org.newdawn.slick.Renderable;
 import java.io.Serializable;
 import java.util.Properties;
 
-abstract class Item implements Serializable {
+abstract class Item implements Serializable, Drawable {
 
 	Properties properties = new Properties();
 
@@ -17,5 +17,4 @@ abstract class Item implements Serializable {
 	abstract void terminate(Tile tile);
 	abstract void terminate(Player player);
 
-	abstract Renderable getRenderable();
 }

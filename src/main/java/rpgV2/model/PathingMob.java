@@ -1,8 +1,9 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
 import org.newdawn.slick.util.pathfinding.Path;
 
-public class PathingMob extends Mob {
+class PathingMob extends Mob {
 
 	/** Path the mob will take */
 	protected Path path;
@@ -56,5 +57,10 @@ public class PathingMob extends Mob {
 
 		++step;
 		super.move(currentTile, nextTile);
+	}
+
+	@Override
+	public Renderable getRenderable() {
+		return null;
 	}
 }

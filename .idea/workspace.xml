@@ -2,6 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3d9698-da2b-4db3-b977-7a65bdccc6a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/16tiles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/AngbandTk.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/Atlas.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/BombExploding.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/Castle2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/DO Items.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/DO Monsters.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/DO More.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/DO SysPics.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/DO Terrain.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/DawnLike.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/RavenmoreIconPack.02.2014.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/Silmar.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/UIpack.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/Work.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/basictiles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/characters.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/dead.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/dungeon_tiles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/expansion_pack-0.04.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/fontlarge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/fontsmall1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/fontsmall2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/game-icons.net.png(1).zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/game-icons.net.png(2).zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/game-icons.net.png.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/hyptosis_sprites-and-tiles-for-you.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/hyptosis_til-art-batch-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/hyptosis_tile-art-batch-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/hyptosis_tile-art-batch-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/hyptosis_tile-art-batch-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/hyptosis_tile-art-batch-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/lpc_entry.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/onscreenControls.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/portraits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/qq-npcs.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/qq_bosses.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/qq_heroes.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/qq_monsters_a-e.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/qq_monsters_f-o.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/qq_monsters_p-z.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AssestsTemp/things.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/level0/Base.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/level0/basictiles16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/level0/basictiles32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save/level0/level0.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Drawable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Base.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/temp.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,8 +60,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/AnimatedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/AnimatedItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/BlockingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/BlockingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/DamagingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/DamagingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Mob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/NonpathingInteractableNpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/NonpathingInteractableNpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/PathingMob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/PathingMob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Rpg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Rpg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/SimpleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/SimpleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rpgV2/model/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rpgV2/model/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/ded.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/ded.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +139,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -478,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578319318414</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Tried to render an item and it worked">
+      <created>1578319872861</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1578319872861</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -504,7 +574,8 @@
     <MESSAGE value="Decided to almost start from scratch (rpgV2)&#10;Decided it'd be easier to deal with a grid based game" />
     <MESSAGE value="Added a bunch of things" />
     <MESSAGE value="Tried to render an item, but worked so-so" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tried to render an item, but worked so-so" />
+    <MESSAGE value="Tried to render an item and it worked" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to render an item and it worked" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="177" key="#Game" timestamp="1577093242337">
@@ -579,10 +650,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="701" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578220470760" />
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578318413426">
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1578332071882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578318413426" />
+    <state x="892" y="197" key="#com.intellij.ide.util.MemberChooser/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578332071882" />
     <state x="690" y="299" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576940610080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -619,10 +690,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578247574661" />
-    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1578319316338">
+    <state x="764" y="110" key="CommitChangelistDialog2" timestamp="1578319871135">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578319316338" />
+    <state x="764" y="110" key="CommitChangelistDialog2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578319871135" />
     <state x="694" y="280" key="EnvironmentVariablesDialog" timestamp="1577897591845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -639,26 +710,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="224" key="Github.UntrackedFilesDialog/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577139071645" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578319822232">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1578339713715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578319822232" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578319822232">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578339713715" />
+    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1578339713715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578319822232" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578319822232">
+    <state width="1877" height="199" key="GridCell.Tab.0.center/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578339713714" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1578339713714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895951" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578319822232" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578319822232">
+    <state width="1877" height="199" key="GridCell.Tab.0.left/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578339713714" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1578339713715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1397" height="221" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@-1440.104.1440.860" timestamp="1576938895952" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578319822232" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578339713715" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1578318424281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -683,10 +754,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="415" y="137" key="SettingsEditor/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1577919001916" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578312891286">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1578323057329">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578312891286" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1440.104.1440.860/0.0.1920.1040@0.0.1920.1040" timestamp="1578323057329" />
     <state x="551" y="267" key="caller.chooser.dialog" timestamp="1577123468172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

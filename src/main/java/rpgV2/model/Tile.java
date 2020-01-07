@@ -5,16 +5,17 @@ import org.newdawn.slick.SlickException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Properties;
 
 class Tile implements Serializable {
 
 	private ArrayList<Item> items = new ArrayList<>();
 	private ArrayList<Entity> entities = new ArrayList<>();
 	private Mob mob = null;
-	private boolean passable = true;
-	private boolean blocked;
+
+	Properties properties = new Properties();
+
 	private float movementCost;
-	private float defaultMovementCost = 1.f;
 	private int X;
 	private int Y;
 
@@ -27,7 +28,10 @@ class Tile implements Serializable {
 	Tile(int x, int y) {
 		this.X = x;
 		this.Y = y;
-		movementCost = defaultMovementCost;
+		properties.put("Passable", true);
+		properties.put("Blocked", false);
+		properties.put("DefaultMovementCost", 1.f);
+		movementCost = (float) properties.get("DefaultMovementCost");
 	}
 
 	void addMob(Mob mob) {
@@ -87,12 +91,13 @@ class Tile implements Serializable {
 	}
 
 	boolean isBlocked() {
-		return blocked;
+		return (boolean) properties.get("Blocked");
 	}
 
 	void setBlocked(boolean blocked) {
-		this.blocked = blocked;
-		setPassable(false);
+		properties.replace("Blocked", blocked);
+		if(blocked)
+			properties.replace("Passable", false);
 	}
 
 	public float getMovementCost() {
@@ -101,25 +106,25 @@ class Tile implements Serializable {
 
 	public void setMovementCost(float movementCost) {
 		if(movementCost < 0)
-			this.movementCost = defaultMovementCost;
+			this.movementCost = (float) properties.get("DefaultMovementCost");
 		else
 			this.movementCost = movementCost;
 	}
 
 	public void setDefaultMovementCost(float movementCost) {
-		defaultMovementCost = movementCost;
+		properties.replace("DefaultMovementCost", movementCost);
 	}
 
 	public float getDefaultMovementCost() {
-		return defaultMovementCost;
+		return (float) properties.get("DefaultMovementCost");
 	}
 
 	public boolean isPassable() {
-		return passable;
+		return (boolean) properties.get("Passable");
 	}
 
 	public void setPassable(boolean passable) {
-		this.passable = passable;
+		properties.replace("Passable", passable);
 	}
 
 	public int getX() {
@@ -149,18 +154,17 @@ class Tile implements Serializable {
 			if((boolean) i.properties.get("Renderable"))
 				ret.add(i.getRenderable());
 		}
+		for (Entity e:
+		     entities) {
+			if((boolean) e.properties.get("Renderable"))
+				ret.add(e.getRenderable());
+		}
+		if(mob != null && (boolean) mob.properties.get("Renderable"))
+			ret.add(mob.getRenderable());
+
 		return ret;
 	}
 
-	public ArrayList<int[]> getRenderablesPos() {
-		ArrayList<int[]> ret = new ArrayList<>();
-		for (Item i:
-		     items) {
-			if((boolean) i.properties.get("Renderable"))
-				ret.add(new int[] {getX(), getY()});
-		}
-		return ret;
-	}
 }
 
 

@@ -1,5 +1,7 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
+
 class DamagingEntity extends Entity {
 
 	private int damage;
@@ -25,5 +27,10 @@ class DamagingEntity extends Entity {
 	@Override
 	void terminate(Tile tile) {
 		tile.remove(this);
+	}
+
+	@Override
+	public Renderable getRenderable() {
+		return null;
 	}
 }

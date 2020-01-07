@@ -6,7 +6,8 @@ import org.newdawn.slick.SlickException;
 
 class SimpleItem extends Item {
 
-	protected Image image;
+	/** Image to be displayed when the item's on the ground or in inventory */
+	Image image;
 
 	SimpleItem(String ref) throws SlickException {
 		properties.put("Renderable", true);
@@ -23,9 +24,9 @@ class SimpleItem extends Item {
 		player.removeItem(this);
 	}
 
+
 	@Override
-	Renderable getRenderable() {
+	public Renderable getRenderable() {
 		return image;
 	}
-
 }

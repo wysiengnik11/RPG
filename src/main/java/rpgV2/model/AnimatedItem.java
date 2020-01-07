@@ -18,8 +18,8 @@ class AnimatedItem extends Item {
 	}
 
 	@Override
-	Renderable getRenderable() {
-		return null;
+	public Renderable getRenderable() {
+		return animation;
 	}
 
 }

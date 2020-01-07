@@ -1,8 +1,10 @@
 package rpgV2.model;
 
+import org.newdawn.slick.Renderable;
+
 import java.util.ArrayList;
 
-public class Player extends Mob {
+class Player extends Mob {
 
 	private ArrayList<Item> items = new ArrayList<>();
 	private int equippedItemID;
@@ -24,6 +26,11 @@ public class Player extends Mob {
 	@Override
 	void terminate(Tile tile) {
 		//TODO game over
+	}
+
+	@Override
+	public Renderable getRenderable() {
+		return null;
 	}
 
 	void removeItem(Item item) {
